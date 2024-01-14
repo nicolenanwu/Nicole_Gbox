@@ -1,0 +1,14 @@
+body {
+  background-color: teal;
+}
+
+h1 {
+  color: white;
+}
+
+img {
+  display: block;
+  border: 10px solid #ddd;
+  border-radius: 9%;
+  padding: 50px;
+}
