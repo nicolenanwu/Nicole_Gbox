@@ -11,10 +11,11 @@ form {
   display: flex;
 }
 p {
-  font-size: 400;
-  color: black;
+  font-size: 16px;
+  color: #251158;
   font-style: italic;
-  font-weight: 550;
+  font-weight: 530;
+  margin-left: 20px;
 }
 
 #generate-joke-button {
@@ -28,6 +29,7 @@ p {
   font-style: italic;
   color: white;
   text-decoration: underline;
+  margin-left: 10px;
 }
 
 #joke {
@@ -44,12 +46,14 @@ ul li {
 }
 
 a {
-  color: black;
+  color: #251158;
   padding: 20px;
+  font-size: 15px;
 }
 
 h1 {
-  color: black;
+  color: #20123d;
+  margin-left: 20px;
 }
 
 img {
@@ -65,7 +69,7 @@ img {
 }
 
 footer {
-  color: black;
+  color: #251158;
   margin: 200px, auto;
   padding-top: 50px;
   text-align: center;
