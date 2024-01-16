@@ -1,29 +1,32 @@
 body {
   font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
-  background-color: #272835;
+  background-color: #afe4dc;
 }
 p {
   font-size: 400;
-  color: bisque;
+  color: #23575b;
   font-weight: bold;
   width: 800px;
 }
 
 #generate-joke-button {
-  background-color: beige;
+  background-color: #23575b;
   display: block;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 15px;
+  border-color: rgb(19, 55, 59);
   font-size: large;
   font-weight: bold;
-  box-shadow: 15px;
+  color: white;
+  text-decoration: underline;
 }
 
 #joke {
   text-align: center;
-  font: size 400px;
-  color: bisque;
+  font-size: 400px;
+  color: #afe4dc;
   margin: 20px;
+  font-style: italic;
 }
 
 ul li {
@@ -31,26 +34,28 @@ ul li {
 }
 
 a {
-  color: bisque;
+  color: #23575b;
   padding: 20px;
 }
 
 h1 {
-  color: bisque;
+  color: #23575b;
 }
 
 img {
   flex: auto;
   display: block;
   width: 800px;
-  border: 8px solid #ddd;
+  border: 8px solid #23575b;
   border-radius: 5%;
   padding: 20px;
   margin: 20px;
+  border-radius: 15px;
+  border-color: rgb(19, 55, 59);
 }
 
 footer {
-  color: bisque;
+  color: #23575b;
   margin: 200px, auto;
   padding-top: 50px;
   text-align: center;
