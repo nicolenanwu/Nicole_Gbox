@@ -19,7 +19,7 @@ p {
 }
 
 #generate-joke-button {
-  background-color: #885df1;
+  background-color: #2e1d59;
   display: block;
   padding: 10px;
   border-radius: 15px;
@@ -27,9 +27,10 @@ p {
   font-size: large;
   font-weight: 700;
   font-style: italic;
-  color: white;
+  color: #f9f7fe;
   text-decoration: underline;
   margin-left: 10px;
+  box-shadow: 0px 4px 30px 0px rgba(94, 84, 138, 0.03);
 }
 
 #joke {
@@ -38,7 +39,6 @@ p {
   padding: 20px;
   line-height: 2;
   border-left: 3px solid #885df1;
-  box-shadow: 0px 4px 30px 0px rgba(39, 33, 66, 0.03);
 }
 
 ul li {
@@ -57,15 +57,13 @@ h1 {
 }
 
 img {
-  flex: auto;
-  display: block;
-  width: 800px;
-  border: 8px solid #885df1;
+  width: 180px;
+  border: 8px solid #2e1d59;
   border-radius: 5%;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 15px;
-  border-color: #351c73;
+  padding: 1px;
+  margin: 5px;
+  float: right;
+  float: top;
 }
 
 footer {
