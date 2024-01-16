@@ -17,13 +17,13 @@ p {
 }
 
 #joke {
-  font-size: large;
+  text-align: center;
+  font: size 400px;
   color: bisque;
 }
 
 ul {
   text-align: center;
-  margin-top: 100px;
 }
 
 a {

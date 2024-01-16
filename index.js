@@ -13,9 +13,9 @@ function generateJoke(event) {
   event.preventDefault();
   let apiKey = "2046c535afeb092fo82f1d306d8a2b2t";
   let context =
-    "You like to traveling to fun cities, and you have been to many places. You have a vacation coming up, and want to know where best to have a good time. The answer must be provided in HTML format. Example: <p>answer</p>";
+    "You like to traveling to fun and different places. You will be driving and living in an RV when visiting. You have a pet Border Collie dog traveling with you. Please keep your answer insightful but brief. Please give diverse answers each time. The answer must be provided in HTML format. Example: <p>answer</p>";
   let prompt =
-    "Tell me what is the best city within the US to visit right now, with 3 top reasons, and 3 top destinations. Please organize your answer in the following format: You should visty xxxx. For 3 reasons: 1, xxxx, 2, xxxx, 3 xxxx. And with 3 top attractions 1 xxxx, 2 xxxx, 3 xxxx.";
+    "Tell me what is the best city to visit in your RV with your Border Collie pet, within Oregon, California, and Arizona to visit; best month of year to visit;  3 top reasons,  10 top destinations with brief reasoning; and 3 top RV parks with brief reasoning. Please organize your answer in the following format: You should visty xxxx. Best time to visit is xxx. For 3 reasons: 1, xxxx, 2, xxxx, 3 xxxx. Here are 10 top attractions 1 xxxx, 2 xxxx, 3 xxxx.4, 5, 6, xxxx";
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
   let jokeElement = document.querySelector("#joke");
