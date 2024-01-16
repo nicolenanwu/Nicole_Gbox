@@ -22,9 +22,7 @@ p {
 }
 
 #joke {
-  text-align: center;
-  font-size: 400px;
-  color: #afe4dc;
+  color: rgb(19, 55, 59);
   margin: 20px;
   font-style: italic;
 }

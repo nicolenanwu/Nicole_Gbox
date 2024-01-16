@@ -22,7 +22,6 @@ function generateJoke(event) {
 
   jokeElement.innerHTML = "Generating suggestion.. please wait";
 
-  console.log("called the AI api");
   axios.get(apiUrl).then(displayJoke);
 }
 
