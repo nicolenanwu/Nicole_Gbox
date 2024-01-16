@@ -1,30 +1,42 @@
 body {
   font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
-  background-color: #afe4dc;
+  background-color: #f9f7fe;
+}
+.container {
+  margin: 80px auto;
+  max-width: 95%;
+}
+
+form {
+  display: flex;
 }
 p {
   font-size: 400;
-  color: #23575b;
-  font-weight: bold;
-  width: 800px;
+  color: black;
+  font-style: italic;
+  font-weight: 550;
 }
 
 #generate-joke-button {
-  background-color: #23575b;
+  background-color: #885df1;
   display: block;
   padding: 10px;
   border-radius: 15px;
-  border-color: rgb(19, 55, 59);
+  border-color: #a6a3ab;
   font-size: large;
-  font-weight: bold;
+  font-weight: 700;
+  font-style: italic;
   color: white;
   text-decoration: underline;
 }
 
 #joke {
-  color: rgb(19, 55, 59);
-  margin: 20px;
-  font-style: italic;
+  font-size: 16px;
+  background-color: #f9f7fe;
+  padding: 20px;
+  line-height: 2;
+  border-left: 3px solid #885df1;
+  box-shadow: 0px 4px 30px 0px rgba(39, 33, 66, 0.03);
 }
 
 ul li {
@@ -32,28 +44,28 @@ ul li {
 }
 
 a {
-  color: #23575b;
+  color: black;
   padding: 20px;
 }
 
 h1 {
-  color: #23575b;
+  color: black;
 }
 
 img {
   flex: auto;
   display: block;
   width: 800px;
-  border: 8px solid #23575b;
+  border: 8px solid #885df1;
   border-radius: 5%;
   padding: 20px;
   margin: 20px;
   border-radius: 15px;
-  border-color: rgb(19, 55, 59);
+  border-color: #351c73;
 }
 
 footer {
-  color: #23575b;
+  color: black;
   margin: 200px, auto;
   padding-top: 50px;
   text-align: center;
