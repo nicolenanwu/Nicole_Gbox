@@ -12,6 +12,11 @@ body {
   max-width: 95%;
 }
 
+h1 {
+  color: var(--secondary-color);
+  margin-left: 20px;
+}
+
 form {
   display: flex;
 }
@@ -54,7 +59,7 @@ ul li {
 
 .links {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   color: var(--secondary-color);
   padding: 20px;
   font-size: 15px;
@@ -62,12 +67,6 @@ ul li {
 a:hover {
   color: #2e1d59;
   text-decoration: none;
-}
-
-h1 {
-  text-align: center;
-  color: var(--secondary-color);
-  margin-left: 20px;
 }
 
 img {
