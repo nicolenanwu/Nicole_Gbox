@@ -1,6 +1,11 @@
+:root {
+  --primary-color: #f9f7fe;
+  --secondary-color: #251158;
+}
+
 body {
   font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
-  background-color: #f9f7fe;
+  background-color: var(--primary-color);
 }
 .container {
   margin: 80px auto;
@@ -12,53 +17,62 @@ form {
 }
 p {
   font-size: 16px;
-  color: #251158;
+  color: var(--secondary-color);
   font-style: italic;
   font-weight: 530;
   margin-left: 20px;
 }
 
 #generate-joke-button {
-  background-color: #2e1d59;
+  background-color: var(--secondary-color);
   display: block;
   padding: 10px;
   border-radius: 15px;
-  border-color: #a6a3ab;
+  border-color: var(--primary-color);
   font-size: large;
   font-weight: 700;
   font-style: italic;
-  color: #f9f7fe;
+  color: var(--primary-color);
   text-decoration: underline;
-  margin-left: 10px;
-  box-shadow: 0px 4px 30px 0px rgba(94, 84, 138, 0.03);
+  margin-left: 0, auto;
+  margin-bottom: 10px;
+  box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 #joke {
   font-size: 16px;
-  background-color: #f9f7fe;
+  background-color: none;
   padding: 20px;
   line-height: 2;
-  border-left: 3px solid #885df1;
+  border-left: 3px solid var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 ul li {
   text-align: center;
 }
 
-a {
-  color: #251158;
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  color: var(--secondary-color);
   padding: 20px;
   font-size: 15px;
 }
+a:hover {
+  color: #2e1d59;
+  text-decoration: none;
+}
 
 h1 {
-  color: #2e1d59;
+  text-align: center;
+  color: var(--secondary-color);
   margin-left: 20px;
 }
 
 img {
   width: 250px;
-  border: 8px solid #2e1d59;
+  border: 8px solid var(--secondary-color);
   border-radius: 5%;
   padding: 1px;
   margin: 5px;
@@ -67,7 +81,7 @@ img {
 }
 
 footer {
-  color: #251158;
+  color: var(--secondary-color);
   margin: 200px, auto;
   padding-top: 50px;
   text-align: center;
