@@ -12,6 +12,9 @@ body {
   max-width: 95%;
 }
 
+iframe {
+}
+
 h1 {
   color: var(--secondary-color);
   margin-left: 20px;
