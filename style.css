@@ -70,8 +70,8 @@ a:hover {
   text-decoration: none;
 }
 
-img {
-  width: 15%;
+video {
+  width: 25%;
   border: 8px solid var(--secondary-color);
   border-radius: 5%;
   padding: 1px;
