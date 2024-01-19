@@ -19,7 +19,6 @@ iframe {
 
 h1 {
   color: var(--secondary-color);
-  margin-left: 20px;
 }
 
 form {
@@ -30,7 +29,6 @@ p {
   color: var(--secondary-color);
   font-style: italic;
   font-weight: 530;
-  margin-left: 20px;
 }
 
 #generate-joke-button {
