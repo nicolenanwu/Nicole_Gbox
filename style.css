@@ -58,13 +58,6 @@ p {
   color: var(--secondary-color);
 }
 
-.links {
-  display: flex;
-  justify-content: space-between;
-  color: var(--secondary-color);
-  padding: 20px;
-  font-size: 15px;
-}
 a:hover {
   color: #2e1d59;
   text-decoration: none;
