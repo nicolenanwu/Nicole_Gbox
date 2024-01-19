@@ -9,12 +9,12 @@ body {
 }
 
 iframe {
-  width: 100%;
   height: 1200px;
 }
 
 h1 {
   color: var(--secondary-color);
+  display: block;
 }
 
 form {
