@@ -7,10 +7,6 @@ body {
   font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
   background-color: var(--primary-color);
 }
-.container {
-  margin: 80px auto;
-  max-width: 95%;
-}
 
 iframe {
   width: 100%;
@@ -24,6 +20,7 @@ h1 {
 form {
   display: flex;
 }
+
 p {
   font-size: 16px;
   color: var(--secondary-color);
