@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #f9f7fe;
+  --primary-color: f9f7fe;
   --secondary-color: #251158;
 }
 
@@ -8,7 +8,10 @@ body {
   background-color: var(--primary-color);
 }
 .container {
+  width: 100%;
   margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 0px;
 }
 
 .navbar-toggle .icon-bar {
@@ -76,46 +79,4 @@ footer {
   margin: 200px, auto;
   padding-top: 50px;
   text-align: center;
-}
-
-.navbar-left {
-  overflow: auto;
-  font-weight: 200;
-  color: #fff;
-  background-color: #3d486f;
-  position: fixed;
-  top: 0px;
-  width: 250px;
-  height: 100%;
-}
-.navbar-left a {
-  color: #fff;
-}
-.navbar-left-header {
-  margin: 15px 0;
-}
-.navbar-left ul,
-.navbar-left li {
-  list-style: none;
-}
-.navbar-clear {
-  clear: left;
-}
-@media (max-width: 767px) {
-  .navbar-left {
-    position: relative;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  .navbar-left .navbar-toggle {
-    display: block;
-  }
-}
-@media (min-width: 768px) {
-  #menu-content {
-    display: block;
-  }
-  .navbar-left .navbar-toggle {
-    display: none;
-  }
 }
