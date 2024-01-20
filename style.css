@@ -32,7 +32,8 @@ form {
   display: flex;
 }
 
-p {
+h2,
+h3 {
   font-size: 16px;
   color: var(--secondary-color);
   font-style: italic;
