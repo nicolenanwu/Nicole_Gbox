@@ -10,12 +10,12 @@ body {
 .container {
   width: 100%;
   margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 0px;
+  margin-left: 10px;
+  margin-right: 20px;
 }
 
 .navbar-toggle .icon-bar {
-  background-color: #fff;
+  background-color: var(--primary-color);
 }
 
 iframe {
@@ -24,7 +24,7 @@ iframe {
 
 h1 {
   color: var(--secondary-color);
-  display: block;
+  font-size: 20px;
 }
 
 form {
@@ -44,23 +44,33 @@ p {
   padding: 10px;
   border-radius: 15px;
   border-color: var(--primary-color);
-  font-size: large;
-  font-weight: 700;
-  font-style: italic;
+  font-size: 16px;
+  font-weight: 530;
+  font-style: arial;
   color: var(--primary-color);
-  text-decoration: underline;
   margin-left: 0, auto;
   margin-bottom: 10px;
   box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 #joke {
-  font-size: 16px;
+  font-size: 14px;
   background-color: none;
   padding: 20px;
   line-height: 2;
   border-left: 3px solid var(--secondary-color);
   color: var(--secondary-color);
+}
+
+@media (max-wdith: 800px) {
+  h1,
+  p,
+  #joke,
+  #generate-joke-button {
+    text-align: center;
+    font-size: 10px;
+    margin: 0, auto;
+  }
 }
 
 a:hover {
