@@ -40,6 +40,11 @@ h3 {
   font-weight: 530;
 }
 
+img {
+  float: right;
+  border-radius: 10%;
+}
+
 #generate-joke-button {
   background-color: var(--secondary-color);
   display: block;
