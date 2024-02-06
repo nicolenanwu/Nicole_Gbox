@@ -40,9 +40,13 @@ p {
 }
 
 .hero {
+  max-width: 1300px;
+  margin: 0 auto;
   background-image: url("media/background4.webp");
   /*  background: var(--secondary-color); */
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   text-align: center;
   padding: 80px 20px;
 }
