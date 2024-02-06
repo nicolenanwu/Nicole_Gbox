@@ -131,6 +131,30 @@ p {
   max-height: 40px;
 }
 
+#generate-joke-button {
+  background-color: var(--secondary-color);
+  display: block;
+  padding: 10px;
+  border-radius: 15px;
+  border-color: var(--primary-color);
+  font-size: 16px;
+  font-weight: 530;
+  font-style: arial;
+  color: var(--primary-color);
+  margin-left: 0, auto;
+  margin-bottom: 10px;
+  box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+#joke {
+  font-size: 14px;
+  background-color: none;
+  padding: 20px;
+  line-height: 2;
+  border-left: 3px solid var(--secondary-color);
+  color: black;
+}
+
 nav {
   padding: 20px 0;
 }
