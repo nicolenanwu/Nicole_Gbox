@@ -39,6 +39,10 @@ p {
   line-height: 30px;
 }
 
+img,
+video {
+  border-radius: 5%;
+}
 .hero {
   max-width: 1300px;
   margin: 0 auto;
