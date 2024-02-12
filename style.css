@@ -225,27 +225,65 @@ footer .social-links a:hover {
   background: var(--branding-color);
 }
 
-@media (max-width: 900px) {
-  h1 {
-    font-size: 44px;
-    line-height: 1.5;
+.grid {
+  display: grid;
+  grid-gap: 34px;
+}
+
+.img-responsive {
+  width: 100%;
+  display: block;
+}
+
+.grid-2-columns {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-3-columns {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-3-columns-with-first-narrow {
+  grid-template-columns: 1fr 2fr 2fr;
+}
+
+section {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+@media (max-width: 960px) {
+  header {
+    padding: 60px 0;
   }
 
-  h2 {
-    font-size: 44px;
+  header h1 {
+    font-size: 48px;
   }
 
-  h3 {
-    font-size: 26px;
+  header h2 {
+    font-size: 20px;
   }
 
-  .content {
-    text-align: center;
-    padding: 0;
+  header h3 {
+    font-size: 12px;
   }
 
-  .project-desciption {
-    padding: 0;
-    text-align: center;
+  .grid {
+    grid-template-columns: 1fr;
+    grid-gap: 32px;
+  }
+
+  section {
+    padding: 30px;
+  }
+
+  .card-header img {
+    display: none;
+  }
+
+  .embed {
+    aspect-ratio: 16 / 9;
   }
 }
