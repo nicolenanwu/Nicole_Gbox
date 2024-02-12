@@ -33,6 +33,10 @@ h3 {
   font-size: 45px;
 }
 
+h6 {
+  font-weight: normal;
+}
+
 p {
   font-weight: normal;
   font-size: 19px;
@@ -270,6 +274,9 @@ section {
     font-size: 20px;
   }
 
+  h6 {
+    font-size: small;
+  }
   .grid {
     grid-template-columns: 1fr;
     grid-gap: 32px;
