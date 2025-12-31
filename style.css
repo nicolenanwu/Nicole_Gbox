@@ -5,9 +5,9 @@
   --branding-color-dark: #0f305f; /* darker hover blue */
   --secondary-color: #e6edf7; /* light blue/gray background */
   --secondary-color-alt: #f4f7fb; /* very light neutral */
-  --text-color: #101827; /* dark navy-ish text */
-  --muted-text-color: #6b7280; /* gray for secondary text */
-  --border-soft: rgba(31, 75, 143, 0.15);
+  --text-color: #f9fafb; /* light text for dark background */
+  --muted-text-color: #d1d5db; /* softer light gray for secondary text */
+  --border-soft: rgba(31, 75, 143, 0.25);
 
   --heading-font-family: "Poppins", serif;
   --default-font-family: "Poppins", sans-serif;
@@ -17,7 +17,7 @@
 body {
   font-family: var(--default-font-family);
   color: var(--text-color);
-  background-color: #050816;
+  background-color: #030712;
 }
 
 h1,
@@ -115,7 +115,7 @@ video {
   font-size: 1rem;
   font-weight: 600;
   margin: 0;
-  color: #9ca3af;
+  color: #d1d5db;
 }
 
 .hero h2 {
@@ -199,28 +199,46 @@ video {
   max-height: 90px;
 }
 
-/* AI button + output */
-#generate-joke-button {
-  background: var(--branding-color-light);
+/* New AI buttons (two-tile layout) */
+#daily-ai-button,
+#pm-ai-button {
+  background: #0b1120;
   display: inline-block;
-  padding: 12px 22px;
+  padding: 10px 18px;
   border-radius: 999px;
-  border: none;
-  font-size: 1.05rem;
+  border: 1px solid var(--branding-color-light);
+  font-size: 0.95rem;
   font-weight: 500;
   font-family: var(--default-font-family);
-  margin-bottom: 10px;
-  box-shadow: 0 14px 30px rgba(15, 48, 95, 0.7);
+  margin-bottom: 6px;
   cursor: pointer;
-  color: #020617;
+  color: #e5e7eb;
+  transition: background 120ms ease-in-out, color 120ms ease-in-out,
+    border-color 120ms ease-in-out, box-shadow 120ms ease-in-out;
 }
 
-#generate-joke-button:hover {
+#daily-ai-button:hover,
+#pm-ai-button:hover {
   background-color: var(--branding-color);
   color: #f9fafb;
+  border-color: var(--branding-color);
+  box-shadow: 0 10px 22px rgba(15, 48, 95, 0.7);
 }
 
-.ai-output,
+/* AI output panels */
+.ai-output {
+  font-size: 0.98rem;
+  font-family: var(--default-font-family);
+  padding: 16px 18px;
+  line-height: 1.8;
+  border-left: 3px solid var(--branding-color-light);
+  background-color: #020617;
+  color: #e5e7eb;
+  border-radius: 14px;
+  text-align: left;
+}
+
+/* (kept for backward compatibility if #joke used elsewhere) */
 #joke {
   font-size: 1rem;
   font-family: var(--default-font-family);
@@ -232,10 +250,10 @@ video {
   border-radius: 14px;
 }
 
-/* Form container around AI button/output */
+/* Form container around AI blocks */
 .form-container {
   margin-top: 10px;
-  padding: 22px 22px;
+  padding: 18px 18px;
   border-radius: 18px;
   background: #020617;
   border: 1px solid rgba(55, 65, 81, 0.9);
@@ -332,4 +350,18 @@ footer .contact-box {
   max-width: 720px;
   margin: 0 auto 24px;
   border: 1px solid rgba(31, 41, 55, 0.9);
+}
+
+/* Footer links and social icons */
+footer a {
+  color: #e5e7eb;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: var(--branding-color-light);
+}
+
+.social-links i {
+  font-size: 1.2rem;
 }
