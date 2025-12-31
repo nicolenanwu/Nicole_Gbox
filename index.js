@@ -11,14 +11,35 @@ function displayJoke(response) {
   });
 }
 
+// simple toggle between 2 topics
+let lastTopic = null;
+
 function generateJoke(event) {
   event.preventDefault();
 
   const apiKey = "2046c535afeb092fo82f1d306d8a2b2t";
+
+  // Decide which topic to ask about
+  let topic;
+  if (lastTopic === "daily") {
+    topic = "product";
+  } else {
+    topic = "daily";
+  }
+  lastTopic = topic;
+
+  // Prompts kept short so answers fit your UI
+  let prompt;
+  if (topic === "daily") {
+    prompt =
+      "You are an AI coach for a busy product and AI leader who travels often and juggles family, side businesses, and flying. Suggest 5 concrete, practical ways AI tools can help in daily life (time management, email, routines, learning, travel). Use very short phrases, no fluff.";
+  } else {
+    prompt =
+      "You are an AI coach for an experienced product manager working in AI and platforms. Suggest 5 specific ways to apply AI in product management (customer research, roadmap, prioritization, experiments, risk). Use very short phrases, no fluff.";
+  }
+
   const context =
-    "You like to traveling to fun and different places. You will be driving and living in an RV when visiting. You have a pet Border Collie dog traveling with you. Please keep your answer insightful but very brief. Please give diverse answers each time. The answer must be provided in HTML format. Example: <p>answer</p>";
-  const prompt =
-    "Tell me what is the best city or area or region to visit in your RV with your Border Collie pet, within states of Oregon California and Arizona; best month of year to visit;  3 top reasons,  5 top destinations with very brief reasoning; and 3 top RV parks with very brief reasoning. Please organize your answer in the following format: You should visty xxxx. Best time to visit is xxx. For 3 reasons: 1, xxxx, 2, xxxx, 3 xxxx. Here are 10 top attractions 1 xxxx, 2 xxxx, 3 xxxx.4, 5, 6, xxxx";
+    "Keep answers under 120 words. Return HTML only. Use this format: <p><strong>Topic:</strong> Daily life or Product management.</p><ul><li>Tip 1</li><li>Tip 2</li><li>Tip 3</li><li>Tip 4</li><li>Tip 5</li></ul>";
 
   const apiUrl = "https://api.shecodes.io/ai/v1/generate";
 
@@ -34,7 +55,10 @@ function generateJoke(event) {
     return;
   }
 
-  jokeElement.innerHTML = "Generating suggestion... please wait";
+  jokeElement.innerHTML =
+    topic === "daily"
+      ? "Asking AI for daily-life ideas..."
+      : "Asking AI for product management ideas...";
 
   axios
     .get(apiUrl, { params })
