@@ -38,7 +38,21 @@
         font-size: 24px;
         color: #dff7fb;
       }
+
+      /* Optional: slightly nicer card spacing if not already in style.css */
+      .card {
+        background-color: var(--secondary-color, #1b1b1f);
+        border-radius: 8px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .card h4 {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
     </style>
+
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -52,6 +66,7 @@
       gtag("js", new Date());
       gtag("config", "G-58PWPQ9BZT");
     </script>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -123,6 +138,7 @@
         </ul>
       </nav>
     </div>
+
     <div class="heroOC">
       <p>Welcome to</p>
       <h1>Oklahoma City</h1>
@@ -233,41 +249,81 @@
       </div>
     </section>
 
-    <!-- Restaurant recommendations section (added) -->
-    <section class="grid grid-2-columns">
-      <div>
-        <h3 class="mb-3">Where we like to eat</h3>
-        <p>
-          Here are a few places that made meals in Oklahoma City feel special,
-          whether for a quick stop or a slower night out.
-        </p>
-        <ul>
-          <li>
-            <strong>Tellers</strong> – Upscale Italian‑leaning menu in a
-            converted bank; great for date night or a celebration.
-          </li>
-          <li>
-            <strong>99 Flavor BBQ &amp; HotPot</strong> – Classic hot pot with
-            rich broth and plenty of choice, perfect on cold days.
-          </li>
-          <li>
-            <strong>Local cafés</strong> – Smaller coffee shops downtown are
-            good for remote work sessions between walks and museum visits.
-          </li>
-        </ul>
-      </div>
+    <!-- Restaurant recommendation cards with images + map links -->
+    <section class="mt-5">
+      <h2 class="text-center mb-4">Where we like to eat</h2>
 
-      <div>
-        <p>
-          Oklahoma City’s food scene is more varied than it looks at first
-          glance. Mix a “destination” meal like Tellers with something casual,
-          and it starts to feel like a city you could live in, not just pass
-          through.
-        </p>
+      <div class="grid grid-3-columns">
+        <!-- Tellers card -->
+        <div class="card">
+          <img
+            src="../Travel/media/restaurant.png"
+            alt="Tellers restaurant interior"
+            class="img-responsive mb-3"
+          />
+          <h4>Tellers</h4>
+          <p>
+            Upscale Italian‑leaning dishes inside a beautifully converted bank
+            building in downtown OKC. Great for date night or a special trip
+            meal.
+          </p>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Tellers+Oklahoma+City"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-outline-light btn-sm mt-2"
+          >
+            View on Google Maps
+          </a>
+        </div>
+
+        <!-- 99 Flavor BBQ & HotPot card -->
+        <div class="card">
+          <img
+            src="../Travel/media/hotpot.png"
+            alt="99 Flavor BBQ & HotPot"
+            class="img-responsive mb-3"
+          />
+          <h4>99 Flavor BBQ &amp; HotPot</h4>
+          <p>
+            Classic hot pot with rich, MSG‑free broths and plenty of choices.
+            Perfect on cold evenings or after a long day of walking the city.
+          </p>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=99+Flavor+BBQ+and+HotPot+Oklahoma+City"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-outline-light btn-sm mt-2"
+          >
+            View on Google Maps
+          </a>
+        </div>
+
+        <!-- Coffee / casual option card -->
+        <div class="card">
+          <img
+            src="../Travel/media/okcafe.png"
+            alt="Cafe in Oklahoma City"
+            class="img-responsive mb-3"
+          />
+          <h4>Neighborhood cafés</h4>
+          <p>
+            Smaller cafés around downtown and Midtown are great for remote work,
+            a simple breakfast, or a quiet break between museums and walks.
+          </p>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=cafe+near+Oklahoma+City+downtown"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-outline-light btn-sm mt-2"
+          >
+            Explore on Google Maps
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- Instagram gallery section (added) -->
+    <!-- Instagram gallery -->
     <section class="mt-5">
       <h2 class="text-center">Gallery</h2>
       <h3 class="text-center mb-4">My Latest Posts</h3>
