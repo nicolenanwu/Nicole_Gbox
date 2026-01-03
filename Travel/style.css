@@ -5,6 +5,8 @@
   --default-font-family: "Poppins", sans-serif;
 }
 
+/* Base typography */
+
 body {
   font-family: var(--default-font-family);
 }
@@ -47,11 +49,14 @@ img,
 video {
   border-radius: 5%;
 }
+
+/* Hero */
+
 .hero {
   max-width: 1300px;
   margin: 0 auto;
   background-image: url("media/background4.webp");
-  /*  background: var(--secondary-color); */
+  /* background: var(--secondary-color); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -74,6 +79,8 @@ video {
   font-size: 24px;
 }
 
+/* Content blocks */
+
 .content-container {
   padding: 60px 20px;
 }
@@ -91,7 +98,6 @@ video {
 .content h3 {
   font-size: 24px;
   line-height: 1.5;
-
   font-family: var(--default-font-family);
 }
 
@@ -103,6 +109,8 @@ video {
   margin: 30px;
 }
 
+/* Buttons */
+
 .btn-branding {
   background: var(--branding-color);
   border-radius: 4px;
@@ -111,10 +119,16 @@ video {
   font-size: 18px;
   line-height: 27px;
   padding: 15px 30px;
+  border: none;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.15s ease;
 }
 
 .btn-branding:hover {
   color: white;
+  background: #365f6a;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1px);
 }
 
 .btn-branding-outline {
@@ -125,20 +139,31 @@ video {
   text-decoration: none;
   line-height: 27px;
   padding: 15px 30px;
+  background: transparent;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.15s ease;
 }
 
 .btn-branding-outline:hover {
   background: var(--branding-color);
   color: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1px);
 }
+
+/* Project section */
 
 .project-desciption {
   padding: 120px 60px;
 }
 
+/* Logo */
+
 .logo {
   max-height: 100px;
 }
+
+/* AI button and joke area */
 
 #generate-joke-button {
   background-color: var(--secondary-color);
@@ -149,7 +174,7 @@ video {
   font-size: 16px;
   font-weight: 430;
   font-style: var(--default-font-family);
-  margin-left: 0, auto;
+  margin-left: 0 auto;
   margin-bottom: 10px;
   box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
@@ -162,6 +187,8 @@ video {
   border-left: 3px solid var(--secondary-color);
   color: var(--primary-color);
 }
+
+/* Navigation */
 
 nav {
   padding: 20px 0;
@@ -182,13 +209,16 @@ nav li {
 nav a {
   text-decoration: none;
   color: #272142;
-  transition: all 100ms ease-in-out;
+  transition: color 0.15s ease-in-out, transform 0.15s ease-in-out;
 }
 
 nav a:hover,
 nav li.active a {
   color: var(--branding-color);
+  transform: translateY(-1px);
 }
+
+/* Footer */
 
 footer {
   margin: 40px 0;
@@ -242,6 +272,8 @@ footer p {
   line-height: 24px;
 }
 
+/* Grid layout */
+
 .grid {
   display: grid;
   grid-gap: 30px;
@@ -266,16 +298,22 @@ footer p {
 
 .embed {
   width: 100%;
-  aspect-ratio: 1 /1;
+  aspect-ratio: 1 / 1;
 }
 
 .instagram-embeds {
   margin: 30px 0;
 }
 
+/* Cards */
+
 .card {
-  background: white;
   margin: 30px 0;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .card-header.grid {
@@ -290,6 +328,23 @@ footer p {
   padding: 0 30px 30px;
 }
 
+/* Card hover effect */
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+  border-color: var(--branding-color);
+}
+
+.card:hover .img-responsive,
+.card:hover .embed {
+  filter: brightness(1.06) saturate(1.08);
+  transform: translateY(-2px);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Sections */
+
 section {
   max-width: 95%;
   margin: 0 auto;
@@ -299,6 +354,8 @@ section {
 section.secondary {
   background: #e0f7fb;
 }
+
+/* Responsive */
 
 @media (max-width: 960px) {
   header {
@@ -336,5 +393,40 @@ section.secondary {
 
   .embed {
     aspect-ratio: 16 / 9;
+  }
+}
+
+/* Print-friendly overrides */
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  .hero,
+  section,
+  .card,
+  section.secondary {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  a,
+  .btn,
+  .btn-branding,
+  .btn-branding-outline,
+  .email-link {
+    color: #1d4ed8 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  nav,
+  .instagram-embeds,
+  video {
+    display: none !important;
   }
 }
