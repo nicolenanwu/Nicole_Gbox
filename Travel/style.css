@@ -1,18 +1,146 @@
-/* ============================
-   Oklahoma City page specific
-   ============================ */
+:root {
+  /* Dark blue professional palette */
+  --branding-color: #1f4b8f;
+  --branding-color-light: #3f7ad6;
+  --branding-color-dark: #0f305f;
+  --secondary-color: #e6edf7;
+  --secondary-color-alt: #f4f7fb;
+  --text-color: #f9fafb;
+  --muted-text-color: #d1d5db;
+  --border-soft: rgba(31, 75, 143, 0.25);
 
-/* Override hero for Oklahoma page (uses .heroOC in your HTML) */
+  --heading-font-family: "Poppins", serif;
+  --default-font-family: "Poppins", sans-serif;
+}
+
+/* Base typography */
+
+body {
+  font-family: var(--default-font-family);
+  color: var(--text-color);
+  background-color: #030712;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #f9fafb;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 3.4rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 1.9rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h6 {
+  font-weight: 500;
+  color: var(--muted-text-color);
+}
+
+p {
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #e5e7eb;
+}
+
+/* Layout helpers */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.img-responsive,
+img,
+video {
+  border-radius: 16px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hero (home and generic) */
+
+.hero {
+  max-width: 1300px;
+  margin: 0 auto;
+  background-image: url("media/background4.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 90px 20px;
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.6);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(63, 122, 214, 0.4), transparent 55%),
+    linear-gradient(135deg, rgba(5, 10, 32, 0.96), rgba(6, 21, 56, 0.96));
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero p {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #d1d5db;
+}
+
+.hero h1 {
+  letter-spacing: 1px;
+  color: #f9fafb;
+}
+
+.hero h2 {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  line-height: 1.6;
+  font-size: 1.5rem;
+  color: #e5e7eb;
+}
+
+/* Oklahoma City hero variant */
 
 .heroOC {
   max-width: 1300px;
   margin: 0 auto;
   background-image:
-    linear-gradient(
-      135deg,
-      rgba(3, 7, 18, 0.95),
-      rgba(15, 23, 42, 0.98)
-    ),
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(4, 12, 31, 0.98)),
     url("media/okcity.jpg");
   background-size: cover;
   background-position: center;
@@ -31,15 +159,12 @@
   font-weight: 600;
   margin: 0 0 12px;
   color: #dff7fb;
-  text-transform: none;
-  letter-spacing: 0.5px;
 }
 
 .heroOC h1 {
   color: #dff7fb;
   font-size: 3rem;
   margin-bottom: 10px;
-  letter-spacing: 0.5px;
 }
 
 .heroOC h2 {
@@ -48,108 +173,122 @@
   line-height: 1.6;
   font-size: 1.35rem;
   color: #dff7fb;
-  max-width: 720px;
-  margin: 0 auto;
 }
 
-/* Intro paragraph under hero (the “Have you considered paying Oklahoma City a visit?” text) */
+/* Oklahoma intro sentence */
 
 .okc-intro {
   text-align: center;
-  max-width: 780px;
-  margin: 26px auto 10px;
-  color: #e5e7eb;
+  max-width: 760px;
+  margin: 28px auto 6px;
   font-size: 1.05rem;
+  color: #e5e7eb;
 }
 
-/* Top content sections (image + text blocks) */
+/* Content container (general inner pages / sections) */
 
-.okc-feature-section {
-  margin-top: 32px;
+.content-container {
+  padding: 60px 20px;
 }
 
-.okc-feature-section .card-tile {
-  padding: 24px;
-  border-radius: 20px;
-  border: 1px solid rgba(31, 41, 55, 0.9);
-  background: #020617;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+.content {
+  margin: 30px;
 }
 
-.okc-feature-section h2,
-.okc-feature-section h3 {
-  margin-bottom: 0.5rem;
+.content h1 {
+  font-size: 2.6rem;
+  line-height: 1.3;
 }
 
-.okc-feature-section p {
-  margin-bottom: 0.75rem;
+.content h2 {
+  font-size: 1.1rem;
+  font-family: var(--default-font-family);
 }
 
-/* Food and Drink section */
-
-section.okc-food-drink {
-  background: #020617;
+.content h3 {
+  font-size: 1.45rem;
+  line-height: 1.5;
+  font-family: var(--default-font-family);
 }
 
-section.okc-food-drink h2 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-section.okc-food-drink h3 {
-  text-align: center;
-  margin-bottom: 24px;
-  color: var(--muted-text-color);
-}
-
-/* Cards for each place (Tellers, 99 Flavor, Vast) */
-
-.okc-card {
-  border-radius: 20px;
-  background: #020617;
-  border: 1px solid rgba(31, 41, 55, 0.9);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.okc-card .card-header {
-  padding: 0;
-}
-
-.okc-card .card-header.grid {
-  grid-gap: 0;
-}
-
-.okc-card .card-header img {
-  border-radius: 0;
-  height: 100%;
-  object-fit: cover;
-}
-
-.okc-card .card-body {
-  padding: 22px 22px 18px;
-}
-
-.okc-card .card-body h4 {
-  margin-bottom: 8px;
-}
-
-.okc-card .card-body h5 {
+.content p {
   font-size: 0.95rem;
-  margin-top: 10px;
-  margin-bottom: 4px;
-  color: var(--muted-text-color);
 }
 
-.okc-card .card-body p {
+/* Buttons */
+
+.btn-branding {
+  background: var(--branding-color);
+  border-radius: 999px;
+  color: #f9fafb;
+  text-decoration: none;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  padding: 12px 28px;
+  border: none;
+  box-shadow: 0 10px 24px rgba(15, 48, 95, 0.6);
+  display: inline-block;
+}
+
+.btn-branding:hover {
+  color: #f9fafb;
+  background: var(--branding-color-dark);
+}
+
+.btn-branding-outline {
+  color: var(--branding-color-light);
+  border: 1px solid var(--branding-color-light);
+  border-radius: 999px;
+  font-size: 1.05rem;
+  text-decoration: none;
+  line-height: 1.6;
+  padding: 12px 28px;
+  background: transparent;
+  display: inline-block;
+}
+
+.btn-branding-outline:hover {
+  background: var(--branding-color-light);
+  color: #020617;
+}
+
+/* Project description (if used) */
+
+.project-desciption {
+  padding: 120px 60px;
+}
+
+/* Branding logo */
+
+.logo {
+  max-height: 90px;
+}
+
+/* AI buttons (two-tile layout) */
+
+#daily-ai-button,
+#pm-ai-button {
+  background: #0b1120;
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--branding-color-light);
   font-size: 0.95rem;
-  margin-bottom: 0.4rem;
+  font-weight: 500;
+  font-family: var(--default-font-family);
+  margin-bottom: 6px;
+  cursor: pointer;
+  color: #e5e7eb;
+  transition:
+    background 120ms ease-in-out,
+    color 120ms ease-in-out,
+    border-color 120ms ease-in-out,
+    box-shadow 120ms ease-in-out;
 }
 
-.okc-card .card-footer {
-  padding: 0 22px 20px;
-}
-
-/* Map iframe wra
+#daily-ai-button:hover,
+#pm-ai-button:hover {
+  background-color: var(--branding-color);
+  color: #f9fafb;
+  border-color: var(--branding-color);
+  box-sh
