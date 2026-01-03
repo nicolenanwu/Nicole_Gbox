@@ -55,22 +55,21 @@ video {
 .hero {
   max-width: 1300px;
   margin: 0 auto;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("media/background4.webp");
+  background-image: url("media/background4.webp");
+  /* background: var(--secondary-color); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   text-align: center;
   padding: 80px 20px;
   border-radius: 1%;
-  color: #dff7fb;
 }
 
 .hero p {
   font-size: 36px;
   font-weight: bold;
   margin: 0;
-  color: #dff7fb;
+  color: #272142;
 }
 
 .hero h2 {
@@ -78,7 +77,6 @@ video {
   font-weight: normal;
   line-height: 1.5;
   font-size: 24px;
-  color: #dff7fb;
 }
 
 /* Content blocks */
@@ -121,17 +119,16 @@ video {
   font-size: 18px;
   line-height: 27px;
   padding: 15px 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
   border: none;
-  transition: transform 150ms ease, box-shadow 150ms ease,
-    background-color 150ms ease, color 150ms ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.15s ease;
 }
 
 .btn-branding:hover {
   color: white;
-  background-color: #366571;
+  background: #365f6a;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
   transform: translateY(-1px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
 }
 
 .btn-branding-outline {
@@ -142,19 +139,19 @@ video {
   text-decoration: none;
   line-height: 27px;
   padding: 15px 30px;
-  background-color: transparent;
-  transition: background-color 150ms ease, color 150ms ease,
-    box-shadow 150ms ease, transform 150ms ease;
+  background: transparent;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.15s ease;
 }
 
 .btn-branding-outline:hover {
   background: var(--branding-color);
   color: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
   transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
-/* Project text */
+/* Project section */
 
 .project-desciption {
   padding: 120px 60px;
@@ -166,40 +163,32 @@ video {
   max-height: 100px;
 }
 
-/* Joke generator */
+/* AI button and joke area */
 
 #generate-joke-button {
   background-color: var(--secondary-color);
   display: block;
-  padding: 10px 16px;
+  padding: 10px;
   border-radius: 10px;
-  border: 1px solid var(--secondary-color);
+  border-color: var(--secondary-color);
   font-size: 16px;
-  font-weight: 500;
-  font-family: var(--default-font-family);
-  margin: 0 auto 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: transform 120ms ease, box-shadow 120ms ease,
-    background-color 120ms ease;
-}
-
-#generate-joke-button:hover {
-  background-color: #cdeef6;
-  transform: translateY(-1px);
-  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.25);
+  font-weight: 430;
+  font-style: var(--default-font-family);
+  margin-left: 0 auto;
+  margin-bottom: 10px;
+  box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 #joke {
   font-size: 14px;
+  background-color: none;
   padding: 20px;
   line-height: 2;
   border-left: 3px solid var(--secondary-color);
-  color: #272142;
-  background-color: transparent;
+  color: var(--primary-color);
 }
 
-/* Navbar */
+/* Navigation */
 
 nav {
   padding: 20px 0;
@@ -220,15 +209,13 @@ nav li {
 nav a {
   text-decoration: none;
   color: #272142;
-  transition: color 120ms ease-in-out, border-bottom-color 120ms ease-in-out;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 2px;
+  transition: color 0.15s ease-in-out, transform 0.15s ease-in-out;
 }
 
 nav a:hover,
 nav li.active a {
   color: var(--branding-color);
-  border-bottom-color: var(--branding-color);
+  transform: translateY(-1px);
 }
 
 /* Footer */
@@ -285,7 +272,7 @@ footer p {
   line-height: 24px;
 }
 
-/* Grid + cards */
+/* Grid layout */
 
 .grid {
   display: grid;
@@ -318,21 +305,15 @@ footer p {
   margin: 30px 0;
 }
 
-.card {
-  background: white;
-  margin: 30px 0;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(68, 127, 142, 0.09);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  transition: transform 160ms ease, box-shadow 160ms ease,
-    border-color 160ms ease;
-}
+/* Cards */
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
-  border-color: rgba(68, 127, 142, 0.35);
+.card {
+  margin: 30px 0;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .card-header.grid {
@@ -345,6 +326,21 @@ footer p {
 
 .card-footer {
   padding: 0 30px 30px;
+}
+
+/* Card hover effect */
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+  border-color: var(--branding-color);
+}
+
+.card:hover .img-responsive,
+.card:hover .embed {
+  filter: brightness(1.06) saturate(1.08);
+  transform: translateY(-2px);
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 /* Sections */
@@ -400,28 +396,37 @@ section.secondary {
   }
 }
 
-/* Print-friendly styles */
+/* Print-friendly overrides */
 
 @media print {
   body {
-    background: white;
-    color: #000;
+    background: #ffffff !important;
+    color: #0f172a !important;
   }
 
-  .hero {
-    background: white none;
-    color: #000;
+  .hero,
+  section,
+  .card,
+  section.secondary {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  a,
+  .btn,
+  .btn-branding,
+  .btn-branding-outline,
+  .email-link {
+    color: #1d4ed8 !important;
+    background: transparent !important;
+    box-shadow: none !important;
   }
 
   nav,
-  footer,
   .instagram-embeds,
   video {
     display: none !important;
-  }
-
-  a::after {
-    content: " (" attr(href) ")";
-    font-size: 10px;
   }
 }
