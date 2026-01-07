@@ -490,3 +490,64 @@ footer a:hover {
     padding: 24px 18px;
   }
 }
+
+/* Shop page specific styles (scoped to body.shop-page) */
+.shop-page header {
+  background: transparent;
+  padding-top: 48px;
+  padding-bottom: 24px;
+}
+
+.shop-page h1 {
+  color: #f9fafb;
+  font-size: 2.8rem;
+}
+
+.shop-page .card {
+  background: #020617;
+  border: 1px solid rgba(31, 41, 55, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+}
+
+.shop-page .card-img-top {
+  border-radius: 12px 12px 0 0;
+  height: 220px;
+  object-fit: cover;
+}
+
+.shop-page .card-body {
+  padding: 18px;
+}
+
+.shop-page .card-title {
+  margin-bottom: 6px;
+  color: #f9fafb;
+  font-size: 1.15rem;
+}
+
+.shop-page .card-text {
+  color: #d1d5db;
+  font-size: 0.98rem;
+  margin-bottom: 10px;
+}
+
+.shop-page .btn {
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-weight: 600;
+}
+
+.shop-page form#notify-form input.form-control {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(31,41,55,0.8);
+  color: #e5e7eb;
+}
+
+.shop-page #notify-message.text-success {
+  color: #c7f0d1;
+}
+
+.shop-page #notify-message.text-danger {
+  color: #f7c6c6;
+}
