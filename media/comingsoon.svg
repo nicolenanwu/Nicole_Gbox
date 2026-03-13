@@ -2,62 +2,51 @@
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#020617"/>
-      <stop offset="50%" stop-color="#0b1120"/>
-      <stop offset="100%" stop-color="#111827"/>
+      <stop offset="50%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#020617"/>
     </linearGradient>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#3f7ad6"/>
       <stop offset="100%" stop-color="#1f4b8f"/>
     </linearGradient>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="18" result="blur"/>
-      <feColorMatrix in="blur" type="matrix"
-        values="0 0 0 0 0.247
-                0 0 0 0 0.478
-                0 0 0 0 0.839
-                0 0 0 0.8 0"/>
-    </filter>
   </defs>
 
   <rect width="800" height="600" rx="32" fill="url(#bg)"/>
 
-  <circle cx="620" cy="60" r="120" fill="#1f2937" opacity="0.25"/>
-  <circle cx="80" cy="520" r="140" fill="#020617" opacity="0.7"/>
+  <rect x="140" y="150" width="520" height="300" rx="28" fill="#020617" stroke="#111827" stroke-width="2"/>
 
-  <rect x="120" y="150" width="560" height="300" rx="26" fill="#020617" stroke="#1f2937" stroke-width="2"/>
-  <rect x="140" y="170" width="520" height="260" rx="22" fill="#020617" stroke="url(#accent)" stroke-width="1.5"/>
+  <rect x="190" y="210" width="120" height="120" rx="24" fill="#020617" stroke="#1f2937" stroke-width="1.5"/>
+  <rect x="340" y="190" width="120" height="140" rx="24" fill="#020617" stroke="#1f2937" stroke-width="1.5"/>
+  <rect x="490" y="220" width="120" height="110" rx="24" fill="#020617" stroke="#1f2937" stroke-width="1.5"/>
 
-  <ellipse cx="400" cy="430" rx="180" ry="30" fill="#020617" filter="url(#glow)" opacity="0.7"/>
+  <rect x="214" y="238" width="72" height="64" rx="16" fill="url(#accent)" opacity="0.9"/>
+  <rect x="364" y="222" width="72" height="80" rx="18" fill="url(#accent)" opacity="0.95"/>
+  <rect x="514" y="244" width="72" height="56" rx="16" fill="url(#accent)" opacity="0.9"/>
 
-  <path d="M220 260 C260 220 320 220 360 260 S460 300 520 260" stroke="url(#accent)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="4 10" opacity="0.8"/>
-  <circle cx="260" cy="246" r="4" fill="#3f7ad6"/>
-  <circle cx="340" cy="250" r="4" fill="#3f7ad6"/>
-  <circle cx="430" cy="268" r="4" fill="#3f7ad6"/>
-  <circle cx="510" cy="246" r="4" fill="#3f7ad6"/>
+  <circle cx="250" cy="278" r="6" fill="#e5e7eb"/>
+  <circle cx="400" cy="262" r="6" fill="#e5e7eb"/>
+  <circle cx="550" cy="272" r="6" fill="#e5e7eb"/>
 
-  <rect x="280" y="287" width="240" height="40" rx="20" fill="#020617" stroke="#1f2937" stroke-width="1.5"/>
-  <circle cx="304" cy="307" r="8" fill="#3f7ad6"/>
-  <circle cx="332" cy="307" r="8" fill="#3f7ad6" opacity="0.8"/>
-  <circle cx="360" cy="307" r="8" fill="#3f7ad6" opacity="0.6"/>
-  <rect x="386" y="298" width="110" height="18" rx="9" fill="#111827"/>
-
-  <text x="400" y="230" text-anchor="middle" fill="#e5e7eb" font-family="Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" letter-spacing="0.16em">
-    NEW EXPERIMENTS
+  <text x="400" y="196" text-anchor="middle" fill="#9ca3af"
+        font-family="Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="13" letter-spacing="0.22em">
+    PIPELINE OF EXPERIMENTS
   </text>
 
-  <text x="400" y="272" text-anchor="middle" fill="#f9fafb" font-family="Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" font-weight="700">
+  <text x="400" y="338" text-anchor="middle" fill="#f9fafb"
+        font-family="Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="28" font-weight="700">
     More launches coming soon
   </text>
 
-  <text x="400" y="352" text-anchor="middle" fill="#9ca3af" font-family="Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15">
-    Iterating on new brands, products, and AIdriven workflows.
+  <text x="400" y="372" text-anchor="middle" fill="#9ca3af"
+        font-family="Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="14">
+    New brands and products are in the build‑and‑test phase.
   </text>
-  <text x="400" y="374" text-anchor="middle" fill="#9ca3af" font-family="Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15">
-    Check back here as experiments graduate into real offerings.
-  </text>
-
-  <rect x="310" y="392" width="180" height="42" rx="21" fill="url(#accent)"/>
-  <text x="400" y="418" text-anchor="middle" fill="#f9fafb" font-family="Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="600">
-    Stay tuned
+  <text x="400" y="394" text-anchor="middle" fill="#9ca3af"
+        font-family="Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="14">
+    This card will update as experiments ship.
   </text>
 </svg>
