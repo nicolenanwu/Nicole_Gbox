@@ -65,11 +65,7 @@
           below to be notified when we launch.
         </p>
 
-        <form name="notify" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="notify-form" class="row g-2 align-items-center" style="max-width:560px;">
-          <input type="hidden" name="form-name" value="notify" />
-          <p style="display:none;">
-            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-          </p>
+        <form id="notify-form" class="row g-2 align-items-center" style="max-width:560px;">
           <div class="col-auto flex-grow-1">
             <label for="notify-email" class="visually-hidden">Email</label>
             <input id="notify-email" name="email" type="email" class="form-control" placeholder="Your email" required />
@@ -128,31 +124,35 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Netlify AJAX form submission and inline confirmation
-      document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById('notify-form');
-        const msg = document.getElementById('notify-message');
-        if (!form) return;
+      // Open user's mail app with a pre-filled email
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("notify-form");
+        const emailInput = document.getElementById("notify-email");
+        const msg = document.getElementById("notify-message");
+        if (!form || !emailInput) return;
 
-        form.addEventListener('submit', function (e) {
+        form.addEventListener("submit", function (e) {
           e.preventDefault();
-          const data = new FormData(form);
+          const email = (emailInput.value || "").trim();
 
-          fetch('/', {
-            method: 'POST',
-            body: new URLSearchParams(data)
-          })
-            .then(() => {
-              msg.style.display = 'block';
-              msg.className = 'text-success';
-              msg.textContent = 'Thanks — we’ll notify you when we launch.';
-              form.reset();
-            })
-            .catch(() => {
-              msg.style.display = 'block';
-              msg.className = 'text-danger';
-              msg.textContent = 'Sorry — submission failed. Please try again.';
-            });
+          if (!email || !email.includes("@")) {
+            msg.style.display = "block";
+            msg.className = "text-danger";
+            msg.textContent = "Please enter a valid email address.";
+            return;
+          }
+
+          const subject = encodeURIComponent("Shop notify signup");
+          const body = encodeURIComponent(
+            `Please add me to your shop updates:\n\n${email}\n\n(Submitted from nicole-wu.com/shop)`
+          );
+
+          window.location.href = `mailto:nanwu.nicole@gmail.com?subject=${subject}&body=${body}`;
+
+          msg.style.display = "block";
+          msg.className = "text-success mt-2";
+          msg.textContent =
+            "Your mail app should have opened with a draft message. Just hit send to complete signup.";
         });
       });
     </script>
