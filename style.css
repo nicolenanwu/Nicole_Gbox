@@ -84,7 +84,7 @@ video {
 /* Hero (home and generic) */
 
 .hero {
-  max-width: 1300px;
+  max-width: 1100px;
   margin: 0 auto;
   background-image: url("media/background4.webp");
   background-size: cover;
@@ -325,13 +325,9 @@ video {
 /* Navigation */
 
 nav {
-  padding: 14px 22px;
-  background: rgba(15, 23, 42, 0.9);
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.4);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+  margin-bottom: 18px;
 }
 
 nav ul {
@@ -504,11 +500,6 @@ footer a:hover {
   .heroOC,
   section {
     padding: 24px 18px;
-  }
-
-  nav {
-    padding: 10px 14px;
-    border-radius: 999px;
   }
 }
 
