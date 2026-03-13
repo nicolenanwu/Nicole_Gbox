@@ -135,6 +135,8 @@ video {
   line-height: 1.6;
   font-size: 1.5rem;
   color: #e5e7eb;
+  max-width: 520px;
+  margin: 0 auto 1.75rem;
 }
 
 /* Oklahoma City hero variant (uses existing HTML class .heroOC) */
@@ -323,7 +325,13 @@ video {
 /* Navigation */
 
 nav {
-  padding: 18px 0;
+  padding: 14px 22px;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 nav ul {
@@ -378,10 +386,10 @@ nav li.active a {
 
 .card-tile {
   padding: 24px;
-  border-radius: 20px;
-  border: 1px solid rgba(31, 41, 55, 0.9);
-  background: #020617;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  border-radius: 18px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
 
 /* Sections (page blocks) */
@@ -404,6 +412,14 @@ section {
 
 .instagram-embeds blockquote.instagram-media {
   margin: 0 auto !important;
+}
+
+.instagram-card {
+  background: #020617;
+  border-radius: 18px;
+  padding: 10px;
+  border: 1px solid rgba(31, 41, 55, 0.9);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.7);
 }
 
 /* Footer */
@@ -488,6 +504,11 @@ footer a:hover {
   .heroOC,
   section {
     padding: 24px 18px;
+  }
+
+  nav {
+    padding: 10px 14px;
+    border-radius: 999px;
   }
 }
 
