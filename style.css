@@ -277,6 +277,54 @@ video {
     border-color 120ms ease-in-out, box-shadow 120ms ease-in-out;
 }
 
+.ai-presets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 6px 0 12px;
+}
+
+.ai-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.ai-badge {
+  font-size: 0.72rem;
+  color: #bfdbfe;
+  background: rgba(30, 58, 138, 0.2);
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  padding: 4px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.01em;
+}
+
+.preset-chip {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  color: #cbd5e1;
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 140ms ease-in-out;
+}
+
+.preset-chip:hover {
+  border-color: var(--branding-color-light);
+  color: #e5e7eb;
+}
+
+.preset-chip.active {
+  background: rgba(31, 75, 143, 0.25);
+  border-color: var(--branding-color-light);
+  color: #eff6ff;
+}
+
 #daily-ai-button:hover,
 #pm-ai-button:hover {
   background-color: var(--branding-color);
@@ -297,6 +345,65 @@ video {
   color: #e5e7eb;
   border-radius: 14px;
   text-align: left;
+  min-height: 110px;
+}
+
+.ai-output.is-thinking {
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-output.is-thinking::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(2, 6, 23, 0) 20%,
+    rgba(59, 130, 246, 0.14) 45%,
+    rgba(2, 6, 23, 0) 70%
+  );
+  animation: ai-shimmer 1.2s linear infinite;
+}
+
+.ai-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ai-meta {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-align: left;
+}
+
+.ai-action-btn {
+  background: transparent;
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 120ms ease-in-out;
+}
+
+.ai-action-btn:hover {
+  color: #f8fafc;
+  border-color: var(--branding-color-light);
+  background: rgba(31, 75, 143, 0.16);
+}
+
+@keyframes ai-shimmer {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(110%);
+  }
 }
 
 /* Backward compatibility */
@@ -500,6 +607,18 @@ footer a:hover {
   .heroOC,
   section {
     padding: 24px 18px;
+  }
+
+  .ai-presets,
+  .ai-actions,
+  .ai-badges {
+    gap: 6px;
+  }
+
+  .preset-chip,
+  .ai-action-btn {
+    padding: 6px 10px;
+    font-size: 0.78rem;
   }
 }
 

@@ -135,22 +135,72 @@
         <!-- Daily life AI block -->
         <div class="form-container mb-4 text-center">
           <h5 class="mb-2">AI in daily life</h5>
+          <div class="ai-badges">
+            <span class="ai-badge">Cursor workflow</span>
+            <span class="ai-badge">LLM assisted</span>
+            <span class="ai-badge">Ops-focused</span>
+          </div>
+          <div class="ai-presets" id="daily-ai-presets">
+            <button class="preset-chip active" type="button" data-preset="trip">
+              Trip planning
+            </button>
+            <button class="preset-chip" type="button" data-preset="focus">
+              Focus routine
+            </button>
+            <button class="preset-chip" type="button" data-preset="inbox">
+              Inbox cleanup
+            </button>
+          </div>
           <button id="daily-ai-button" type="button">
-            Ask AI for daily-life ideas
+            Generate ideas
           </button>
           <div id="daily-ai-output" class="mt-2 ai-output">
             Click the button to get 5 practical ways AI can help with your
             day-to-day routines.
+          </div>
+          <div id="daily-ai-meta" class="ai-meta">Not generated yet</div>
+          <div class="ai-actions">
+            <button id="daily-ai-regenerate" type="button" class="ai-action-btn">
+              Regenerate
+            </button>
+            <button id="daily-ai-copy" type="button" class="ai-action-btn">
+              Copy
+            </button>
           </div>
         </div>
 
         <!-- Product management AI block -->
         <div class="form-container text-center">
           <h5 class="mb-2">AI in product management</h5>
-          <button id="pm-ai-button" type="button">Ask AI for PM ideas</button>
+          <div class="ai-badges">
+            <span class="ai-badge">PM copilot</span>
+            <span class="ai-badge">Fast synthesis</span>
+            <span class="ai-badge">Decision-ready</span>
+          </div>
+          <div class="ai-presets" id="pm-ai-presets">
+            <button class="preset-chip active" type="button" data-preset="prd">
+              PRD draft
+            </button>
+            <button class="preset-chip" type="button" data-preset="experiment">
+              Experiment plan
+            </button>
+            <button class="preset-chip" type="button" data-preset="risk">
+              Risk review
+            </button>
+          </div>
+          <button id="pm-ai-button" type="button">Generate ideas</button>
           <div id="pm-ai-output" class="mt-2 ai-output">
             Click the button to get 5 ways to apply AI in product management
             decisions.
+          </div>
+          <div id="pm-ai-meta" class="ai-meta">Not generated yet</div>
+          <div class="ai-actions">
+            <button id="pm-ai-regenerate" type="button" class="ai-action-btn">
+              Regenerate
+            </button>
+            <button id="pm-ai-copy" type="button" class="ai-action-btn">
+              Copy
+            </button>
           </div>
         </div>
       </div>
