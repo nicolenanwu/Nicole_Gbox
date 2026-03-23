@@ -124,6 +124,18 @@ video {
   color: #d1d5db;
 }
 
+.hero-kicker {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.65);
+  color: #dbeafe;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+}
+
 .hero h1 {
   letter-spacing: 1px;
   color: #f9fafb;
@@ -137,6 +149,23 @@ video {
   color: #e5e7eb;
   max-width: 520px;
   margin: 0 auto 1.75rem;
+}
+
+.hero-highlights {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.hero-highlights span {
+  font-size: 0.78rem;
+  color: #dbeafe;
+  background: rgba(30, 58, 138, 0.2);
+  border: 1px solid rgba(96, 165, 250, 0.34);
+  padding: 5px 10px;
+  border-radius: 999px;
 }
 
 /* Oklahoma City hero variant (uses existing HTML class .heroOC) */
@@ -435,6 +464,12 @@ nav {
   padding: 12px 0;
   border-bottom: 1px solid rgba(31, 41, 55, 0.9);
   margin-bottom: 18px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(3, 7, 18, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 nav ul {
@@ -442,11 +477,18 @@ nav ul {
   margin: 0;
 }
 
+nav .nav-links,
+nav .nav-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 nav li {
   display: inline;
   list-style: none;
-  line-height: 42px;
-  margin-left: 15px;
+  line-height: 1;
+  margin-left: 0;
 }
 
 nav a {
@@ -462,6 +504,58 @@ nav a:hover,
 nav li.active a {
   color: var(--branding-color-light);
   border-bottom-color: var(--branding-color-light);
+}
+
+.nav-social a {
+  border-bottom: none;
+  padding-bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.65);
+}
+
+.nav-social a:hover {
+  background: rgba(31, 75, 143, 0.22);
+  border-color: var(--branding-color-light);
+}
+
+.nav-social i {
+  font-size: 0.8rem;
+}
+
+.focus-strip {
+  max-width: 1100px;
+  margin: 0 auto 36px;
+  padding: 22px 26px;
+  background: rgba(2, 6, 23, 0.75);
+  border: 1px solid rgba(31, 41, 55, 0.9);
+  border-radius: 18px;
+}
+
+.focus-strip h4 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #dbeafe;
+}
+
+.focus-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.focus-tags span {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 999px;
+  padding: 6px 11px;
 }
 
 /* Grid layout */
@@ -501,10 +595,24 @@ section {
   max-width: 1100px;
   margin: 0 auto 36px auto;
   padding: 30px;
-  background: #020617;
+  background: linear-gradient(180deg, #020617, #020913);
   border-radius: 22px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
   border: 1px solid rgba(31, 41, 55, 0.9);
+}
+
+.section-kicker {
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  color: #93c5fd;
+}
+
+.section-lead {
+  color: #cbd5e1;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
 }
 
 /* Instagram embeds */
@@ -599,14 +707,29 @@ footer a:hover {
 }
 
 @media (max-width: 576px) {
-  nav li {
-    margin-left: 10px;
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  nav .nav-links,
+  nav .nav-social {
+    gap: 10px;
   }
 
   .hero,
   .heroOC,
   section {
     padding: 24px 18px;
+  }
+
+  .hero-highlights {
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .hero-highlights span {
+    font-size: 0.74rem;
   }
 
   .ai-presets,
@@ -619,6 +742,10 @@ footer a:hover {
   .ai-action-btn {
     padding: 6px 10px;
     font-size: 0.78rem;
+  }
+
+  .focus-strip {
+    padding: 18px;
   }
 }
 
