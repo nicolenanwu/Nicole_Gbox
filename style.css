@@ -212,6 +212,16 @@ nav li.active a {
   font-size: 0.85rem;
 }
 
+/* Text-based social link (e.g. Xiaohongshu) — can't be a fixed-size icon
+   circle since it holds real characters, so it becomes a pill instead. */
+.nav-social a.nav-social-text {
+  width: auto;
+  padding: 0 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 .logo {
   max-height: 56px;
 }
