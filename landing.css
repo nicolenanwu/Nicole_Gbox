@@ -396,6 +396,22 @@ body.landing-page {
   flex-direction: column;
 }
 
+.content-block .archive-footnote {
+  margin-top: 16px;
+  font-size: 0.82rem;
+  color: var(--text-faint);
+}
+
+.archive-footnote a {
+  color: var(--text-faint);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.archive-footnote a:hover {
+  color: var(--accent);
+}
+
 .archive-item {
   display: flex;
   justify-content: space-between;
