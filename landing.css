@@ -34,6 +34,10 @@ body.landing-page {
 }
 
 /* ---------- Sidebar ---------- */
+/* Two flex children (.side-top / .side-social) pinned to the
+   top and bottom of the viewport via justify-content: space-between —
+   this is how the reference site keeps social icons anchored low
+   instead of trailing right after the nav links. */
 
 .side-panel {
   position: sticky;
@@ -42,23 +46,16 @@ body.landing-page {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding: 96px 0 40px;
-}
-
-.side-eyebrow {
-  color: var(--accent);
-  font-size: 0.95rem;
-  font-weight: 500;
-  margin: 0 0 6px;
+  justify-content: space-between;
+  padding: 96px 0 56px;
 }
 
 .side-name {
-  font-size: 2.25rem;
+  font-size: 3rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 }
 
 .side-name a {
@@ -68,7 +65,7 @@ body.landing-page {
 
 .side-tagline {
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   letter-spacing: -0.01em;
   color: var(--text-muted);
   margin: 0 0 16px;
@@ -78,14 +75,13 @@ body.landing-page {
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text-faint);
-  max-width: 300px;
+  max-width: 320px;
   margin-bottom: 40px;
 }
 
 .side-links {
   display: flex;
   flex-direction: column;
-  margin-bottom: 40px;
 }
 
 .side-link {
@@ -116,9 +112,13 @@ body.landing-page {
   padding-left: 6px;
 }
 
+/* Bottom-anchored social row: plain larger glyphs, no pill background,
+   matching the reference site's simple icon-row treatment. */
+
 .side-social {
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 20px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -128,12 +128,9 @@ body.landing-page {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-pill);
   color: var(--text-faint);
   text-decoration: none;
-  transition: all 150ms ease;
+  transition: color 150ms ease, transform 150ms ease;
 }
 
 .side-social a:hover {
@@ -142,13 +139,13 @@ body.landing-page {
 }
 
 .side-social i {
-  font-size: 0.95rem;
+  font-size: 1.4rem;
+  width: 24px;
+  text-align: center;
 }
 
 .side-social .side-social-text {
-  width: auto;
-  padding: 0 10px;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-weight: 700;
 }
 
@@ -208,7 +205,7 @@ body.landing-page {
   max-width: 640px;
 }
 
-/* ---------- About ---------- */
+/* ---------- Shared tag pills (About, Experience, Ventures) ---------- */
 
 .about-tags {
   display: flex;
@@ -225,175 +222,131 @@ body.landing-page {
   padding: 5px 12px;
 }
 
-/* ---------- Experience tabs ---------- */
+/* =========================================================
+   Unified entry list — used by Experience, Ventures, Adventures,
+   and Archive so every section shares the SAME left-column width,
+   grid alignment, and hover behavior top to bottom, instead of
+   each section inventing its own card/grid pattern.
 
-.exp-tabs {
-  display: flex;
+   Structure: <ol/ul class="entry-list"> > <li/a class="entry-item">
+     > .entry-highlight (hover background, sits behind content)
+     > .entry-meta (fixed-width left column: date / logo / icon)
+     > .entry-body (flexible right column: heading + text)
+
+   Hover behavior mirrors the reference site: the hovered item gets
+   a soft background highlight that bleeds past its own padding, and
+   sibling items dim slightly so attention follows the cursor.
+   ========================================================= */
+
+.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: start;
   gap: 24px;
-  align-items: flex-start;
+  padding: 20px 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 200ms ease;
 }
 
-.exp-tab-list {
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 160px;
-  border-left: 2px solid var(--border);
+.entry-list:hover .entry-item:not(:hover) {
+  opacity: 0.55;
 }
 
-.exp-tab {
-  background: none;
-  border: none;
-  border-left: 2px solid transparent;
-  margin-left: -2px;
-  text-align: left;
-  padding: 10px 16px;
-  color: var(--text-faint);
-  font-size: 0.85rem;
-  font-family: var(--font-body);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 150ms ease;
+.entry-highlight {
+  position: absolute;
+  inset: 0 -12px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  box-shadow: none;
+  transition: background 200ms ease, box-shadow 200ms ease;
+  z-index: 0;
+  pointer-events: none;
 }
 
-.exp-tab:hover {
+.entry-item:hover .entry-highlight {
   background: var(--surface-alt);
-  color: var(--text);
+  box-shadow: inset 0 1px 0 0 var(--border);
 }
 
-.exp-tab.is-active {
-  color: var(--accent);
-  border-left-color: var(--accent);
-  background: var(--surface-alt);
-}
-
-.exp-panels {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-.exp-panel {
-  display: none;
-}
-
-.exp-panel.is-active {
-  display: block;
-}
-
-.exp-panel h4 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 3px;
-}
-
-.exp-panel .exp-meta {
+.entry-meta {
+  position: relative;
+  z-index: 1;
   color: var(--text-faint);
   font-size: 0.8rem;
-  margin-bottom: 12px;
+  font-weight: 600;
+  padding-top: 3px;
 }
 
-.exp-panel .about-tags {
-  margin-top: 0;
-  margin-bottom: 12px;
-}
-
-/* ---------- Featured ventures ---------- */
-
-.venture-card {
-  display: grid;
-  grid-template-columns: 76px 1fr;
-  gap: 20px;
-  align-items: center;
-  padding: 18px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  margin-bottom: 16px;
-  transition: border-color 150ms ease, transform 150ms ease;
-}
-
-.venture-card:hover {
-  border-color: var(--accent-border);
-  transform: translateY(-2px);
-}
-
-.venture-card img {
+.entry-meta img {
+  width: 100%;
+  max-width: 96px;
   border-radius: var(--radius-sm);
   background: var(--surface-alt);
   padding: 10px;
+  display: block;
 }
 
-.venture-card h4 {
-  font-size: 1rem;
+.entry-meta i {
+  color: var(--accent);
+  font-size: 1.6rem;
+  display: block;
+}
+
+.entry-body {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.entry-body h4 {
+  font-size: 1.05rem;
   font-weight: 700;
-  margin-bottom: 4px;
+  color: var(--text);
+  margin: 0 0 4px;
 }
 
-.venture-card p {
-  margin-bottom: 8px;
-  font-size: 0.88rem;
-}
-
-.venture-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 8px;
-}
-
-.venture-tags span {
-  font-size: 0.68rem;
+.entry-body p {
+  font-size: 0.92rem;
+  line-height: 1.65;
   color: var(--text-muted);
-  background: var(--surface-alt);
-  border: 1px solid var(--border);
-  padding: 3px 9px;
-  border-radius: var(--radius-pill);
+  margin: 0 0 8px;
 }
 
-.venture-card .pillar-cta {
+.entry-body .about-tags {
+  margin: 0 0 10px;
+}
+
+.entry-body .pillar-cta {
   color: var(--accent);
   font-size: 0.8rem;
   font-weight: 600;
   text-decoration: none;
 }
 
-/* ---------- Adventures ---------- */
+/* Archive-specific: no meta image/icon needed, just a directional arrow */
 
-.adventure-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+.entry-item.entry-item--archive {
+  grid-template-columns: 28px 1fr;
 }
 
-.adventure-card {
-  padding: 18px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+.entry-item--archive .entry-meta {
+  padding-top: 4px;
 }
 
-.adventure-card i {
-  color: var(--accent);
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-  display: block;
+.entry-item--archive .entry-meta i {
+  font-size: 0.9rem;
 }
 
-.adventure-card h4 {
+.entry-item--archive .entry-body h4 {
   font-size: 0.98rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.adventure-card p {
-  font-size: 0.85rem;
-  margin-bottom: 8px;
-}
-
-/* ---------- Archive ---------- */
-
-.archive-list {
-  display: flex;
-  flex-direction: column;
 }
 
 .content-block .archive-footnote {
@@ -412,38 +365,6 @@ body.landing-page {
   color: var(--accent);
 }
 
-.archive-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border);
-  text-decoration: none;
-  color: var(--text);
-  font-size: 0.95rem;
-  transition: padding-left 150ms ease;
-}
-
-.archive-item:hover {
-  padding-left: 8px;
-  color: var(--accent);
-}
-
-.archive-item .archive-label {
-  font-weight: 600;
-}
-
-.archive-item .archive-desc {
-  color: var(--text-faint);
-  font-size: 0.82rem;
-  font-weight: 400;
-}
-
-.archive-item i {
-  color: var(--text-faint);
-  font-size: 0.85rem;
-}
-
 /* ---------- Contact ---------- */
 
 .contact-block {
@@ -455,6 +376,10 @@ body.landing-page {
 .contact-block .side-eyebrow {
   justify-content: center;
   display: flex;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0 0 6px;
 }
 
 .contact-block h3 {
@@ -537,6 +462,7 @@ body.landing-page {
     width: 100%;
     flex: none;
     padding: 40px 0 28px;
+    gap: 28px;
   }
 
   .side-desc {
@@ -547,7 +473,6 @@ body.landing-page {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 4px 16px;
-    margin-bottom: 20px;
   }
 
   .side-link {
@@ -559,45 +484,35 @@ body.landing-page {
     padding: 0 0 50px;
   }
 
-  .exp-tabs {
-    flex-direction: column;
+  .entry-item {
+    grid-template-columns: 96px 1fr;
+    gap: 16px;
   }
 
-  .exp-tab-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    border-left: none;
-    border-bottom: 2px solid var(--border);
-    margin-bottom: 20px;
-  }
-
-  .exp-tab {
-    border-left: none;
-    border-bottom: 2px solid transparent;
-    margin-left: 0;
-    margin-bottom: -2px;
-  }
-
-  .exp-tab.is-active {
-    border-left-color: transparent;
-    border-bottom-color: var(--accent);
-  }
-
-  .adventure-grid {
-    grid-template-columns: 1fr;
+  .entry-item.entry-item--archive {
+    grid-template-columns: 24px 1fr;
   }
 }
 
 @media (max-width: 560px) {
   .side-name {
-    font-size: 1.9rem;
+    font-size: 2.1rem;
   }
 
-  .venture-card {
+  .side-tagline {
+    font-size: 1.05rem;
+  }
+
+  .entry-item {
     grid-template-columns: 1fr;
   }
 
-  .archive-item i {
-    display: none;
+  .entry-meta img {
+    max-width: 64px;
+    margin-bottom: 8px;
+  }
+
+  .entry-item.entry-item--archive {
+    grid-template-columns: 20px 1fr;
   }
 }

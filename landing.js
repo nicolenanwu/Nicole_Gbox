@@ -1,34 +1,13 @@
-// Landing page interactions: experience tabs + scroll-spy nav highlighting.
+// Landing page interactions: scroll-spy nav highlighting + contact form.
 // Vanilla JS, no framework — kept small and dependency-free on purpose.
+// Note: the Experience/Ventures/Adventures/Archive hover-highlight and
+// sibling-dim effects are pure CSS (see .entry-item in landing.css) —
+// no JS needed for those.
 
 document.addEventListener("DOMContentLoaded", function () {
-  initExperienceTabs();
   initScrollSpy();
   initContactForm();
 });
-
-function initExperienceTabs() {
-  const tabs = document.querySelectorAll(".exp-tab");
-  const panels = document.querySelectorAll(".exp-panel");
-  if (!tabs.length || !panels.length) return;
-
-  tabs.forEach(function (tab) {
-    tab.addEventListener("click", function () {
-      const targetId = tab.getAttribute("data-target");
-
-      tabs.forEach(function (t) {
-        t.classList.remove("is-active");
-      });
-      panels.forEach(function (p) {
-        p.classList.remove("is-active");
-      });
-
-      tab.classList.add("is-active");
-      const targetPanel = document.getElementById(targetId);
-      if (targetPanel) targetPanel.classList.add("is-active");
-    });
-  });
-}
 
 function initScrollSpy() {
   const links = document.querySelectorAll(".side-link");
