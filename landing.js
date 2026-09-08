@@ -83,18 +83,6 @@ function initContactForm() {
     status.textContent = text;
   }
 
-  function openMailFallback(name, email, message) {
-    const subject = encodeURIComponent("Message from nicole-wu.com");
-    const body = encodeURIComponent(
-      `${message}\n\n\u2014 ${name || email} (${email})`
-    );
-    window.location.href = `mailto:nanwu.nicole@gmail.com?subject=${subject}&body=${body}`;
-    showStatus(
-      "Your mail app should have opened with a draft \u2014 just hit send.",
-      "success"
-    );
-  }
-
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
     const name = (nameInput.value || "").trim();
@@ -131,9 +119,13 @@ function initContactForm() {
       form.reset();
     } catch (err) {
       // Backend isn't reachable (e.g. running locally, or not deployed yet).
-      // Fall back to a pre-filled email draft so the message still gets through.
-      console.warn("Contact function unavailable, falling back to mailto:", err);
-      openMailFallback(name, email, message);
+      // Intentionally no mailto fallback here — Nicole's address stays
+      // private, so a failed send just asks the visitor to retry.
+      console.warn("Contact function unavailable:", err);
+      showStatus(
+        "Something went wrong sending your message \u2014 please try again in a moment.",
+        "error"
+      );
     } finally {
       if (submitButton) submitButton.disabled = false;
     }

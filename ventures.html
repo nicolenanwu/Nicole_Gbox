@@ -159,7 +159,7 @@
     </section>
 
     <footer class="container text-center py-4">
-      <p class="mb-1">Questions? Email <a href="mailto:nanwu.nicole@gmail.com">nanwu.nicole@gmail.com</a></p>
+      <p class="mb-1">Questions about either brand? Use the sign-up form above and I'll follow up.</p>
       <p class="text-muted small">Both brands are early-stage and evolving — thanks for following along.</p>
     </footer>
 
@@ -179,18 +179,6 @@
           msg.style.display = "block";
           msg.className = className;
           msg.textContent = text;
-        }
-
-        function openMailFallback(email) {
-          const subject = encodeURIComponent("Ventures notify signup");
-          const body = encodeURIComponent(
-            `Please add me to your ventures updates:\n\n${email}\n\n(Submitted from nicole-wu.com/ventures)`
-          );
-          window.location.href = `mailto:nanwu.nicole@gmail.com?subject=${subject}&body=${body}`;
-          showMessage(
-            "Your mail app should have opened with a draft \u2014 just hit send to complete signup.",
-            "text-success mt-2"
-          );
         }
 
         form.addEventListener("submit", async function (e) {
@@ -224,9 +212,13 @@
             form.reset();
           } catch (err) {
             // Backend isn't reachable (e.g. running locally, or not deployed yet).
-            // Fall back to a pre-filled email draft so the signup still gets through.
-            console.warn("Notify function unavailable, falling back to mailto:", err);
-            openMailFallback(email);
+            // Intentionally no mailto fallback — Nicole's address stays
+            // private, so a failed signup just asks the visitor to retry.
+            console.warn("Notify function unavailable:", err);
+            showMessage(
+              "Something went wrong \u2014 please try again in a moment.",
+              "text-danger"
+            );
           } finally {
             if (submitButton) submitButton.disabled = false;
           }
