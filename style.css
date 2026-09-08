@@ -1,6 +1,7 @@
 /* =========================================================
    Nicole Wu — shared design system
-   Loaded by index.html, shop.html, and Travel/OklahomaCity.html
+   Loaded by every page: index.html, about.html, work.html, ventures.html,
+   and the Travel pages
    ========================================================= */
 
 :root {
@@ -612,7 +613,7 @@ footer a:hover,
   font-size: 1.15rem;
 }
 
-/* ---------- Bootstrap card overrides (shared by shop + travel pages) ---------- */
+/* ---------- Bootstrap card overrides (shared by ventures + travel pages) ---------- */
 
 .card {
   background: var(--surface);
@@ -634,11 +635,124 @@ footer a:hover,
   color: var(--text-muted);
 }
 
+/* ---------- Pillar cards (home page: Product / Entrepreneur / Adventurer) ---------- */
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.pillar-card {
+  display: block;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 150ms ease, border-color 150ms ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-border);
+}
+
+.pillar-card .pillar-icon {
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+  display: block;
+  color: var(--accent);
+}
+
+.pillar-card h4 {
+  margin-bottom: 6px;
+}
+
+.pillar-card p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.pillar-card .pillar-cta {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ---------- Timeline (work page) ---------- */
+
+.timeline {
+  position: relative;
+  padding-left: 28px;
+  border-left: 2px solid var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 34px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -34px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--surface);
+}
+
+.timeline-item .timeline-meta {
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.timeline-item h4 {
+  margin-bottom: 2px;
+}
+
+.timeline-item ul {
+  margin-bottom: 0;
+}
+
+/* ---------- Breadcrumb (sub-pages) ---------- */
+
+.breadcrumb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: 18px;
+}
+
+.breadcrumb-link:hover {
+  color: var(--accent);
+}
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 992px) {
   .grid-3-columns {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .pillars {
+    grid-template-columns: 1fr;
   }
 
   .hero {

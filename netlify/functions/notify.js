@@ -49,8 +49,8 @@ export default async (request) => {
       body: JSON.stringify({
         from: FROM_EMAIL,
         to: TO_EMAIL,
-        subject: "New shop notify signup",
-        text: `New signup: ${email}\n\nSource: /shop.html`
+        subject: "New ventures notify signup",
+        text: `New signup: ${email}\n\nSource: /ventures.html`
       })
     });
 

@@ -1,14 +1,14 @@
 /* =========================================================
-   Shop page — page-specific overrides
-   Loaded after style.css on shop.html only
+   Ventures page — page-specific overrides
+   Loaded after style.css on ventures.html only
    ========================================================= */
 
-.shop-page header.hero {
+.ventures-page header.hero {
   padding-top: 72px;
   padding-bottom: 56px;
 }
 
-.shop-page .card-img-top {
+.ventures-page .card-img-top {
   border-radius: var(--radius-md) var(--radius-md) 0 0;
   height: 200px;
   object-fit: cover;
@@ -16,12 +16,12 @@
   padding: 20px;
 }
 
-.shop-page .card-title {
+.ventures-page .card-title {
   margin-bottom: 6px;
   font-size: 1.15rem;
 }
 
-.shop-page .card-text {
+.ventures-page .card-text {
   font-size: 0.98rem;
   margin-bottom: 10px;
 }

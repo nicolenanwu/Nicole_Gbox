@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shop — Nicole Wu</title>
+    <meta
+      name="description"
+      content="Ventures by Nicole Wu — Silva Lab and LeFaubourg Trading, two consumer brands built end to end: sourcing, branding, and e-commerce."
+    />
+    <title>Ventures — Nicole Wu</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,35 +21,38 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="shop.css" />
+    <link rel="stylesheet" href="ventures.css" />
     <script
       src="https://kit.fontawesome.com/ddc3ee268a.js"
       crossorigin="anonymous"
     ></script>
   </head>
 
-  <body class="shop-page">
+  <body class="ventures-page">
     <div class="container">
       <nav class="d-flex justify-content-between align-items-center">
         <a href="index.html" title="Homepage">
-          <img src="media/NW stand.png" class="logo" alt="Nicole Logo" />
+          <img src="media/NW stand.png" class="logo" alt="Nicole Wu logo" />
         </a>
 
         <ul class="list-unstyled d-flex mb-0 nav-links">
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li class="active">
-            <a href="shop.html">Shop</a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/nicolenanwu">LinkedIn</a>
-          </li>
-          <li>
-            <a href="https://www.github.com/nicolenanwu">GitHub</a>
-          </li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li class="active"><a href="ventures.html">Ventures</a></li>
+          <li><a href="Travel/index.html">Travel</a></li>
         </ul>
         <ul class="list-unstyled d-flex mb-0 nav-social">
+          <li>
+            <a href="https://www.linkedin.com/in/nicolenanwu" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.github.com/nicolenanwu" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
           <li>
             <a href="https://www.facebook.com/nanwunicole" title="Facebook">
               <i class="fab fa-facebook-f"></i>
@@ -70,11 +77,11 @@
 
     <header class="hero text-center">
       <p class="hero-kicker">EARLY-STAGE BRANDS</p>
-      <p>Shop</p>
+      <p>Ventures</p>
       <h1>Ideas becoming brands</h1>
       <h2 class="mb-3">
-        A behind-the-scenes look at the product lines I'm building — branding,
-        sourcing, and e-commerce, tested end to end.
+        Two consumer brands, built end to end &mdash; branding, sourcing, and
+        e-commerce, tested with real revenue.
       </h2>
     </header>
 
@@ -89,13 +96,14 @@
         <h3>From platform products to my own brands</h3>
         <p>
           After years shipping products at scale for other companies, I wanted
-          to run the full playbook myself — branding, sourcing, operations,
-          and customer experience, start to finish.
+          to run the full playbook myself — sourcing, branding, operations,
+          and customer experience, start to finish, with my own money on the
+          line.
         </p>
         <p>
           I lean on modern AI tools to move faster on research, positioning,
-          and day-to-day operations. Both brands below are still early — sign
-          up and I'll let you know the moment they're live.
+          and day-to-day operations. Both brands below are early and growing —
+          sign up and I'll let you know the moment something new launches.
         </p>
 
         <form id="notify-form" class="row g-2 align-items-center" style="max-width:560px;">
@@ -119,7 +127,7 @@
             <img src="media/lefaubourg.svg" class="card-img-top" alt="LeFaubourg Trading" />
             <div class="card-body">
               <h5 class="card-title">LeFaubourg Trading</h5>
-              <p class="card-text">Home décor, sourced directly and sold through the Amazon US marketplace.</p>
+              <p class="card-text">Home d&eacute;cor, sourced directly and sold through the Amazon US marketplace &mdash; roughly $3K/month in revenue with no third-party fulfillment overhead.</p>
               <p class="text-muted small mb-2">Live on Amazon US — dedicated storefront coming soon.</p>
               <a href="#" class="btn btn-branding-outline">Visit on Amazon</a>
             </div>
@@ -131,7 +139,7 @@
             <img src="media/silvalogo.svg" class="card-img-top" alt="Silva Lab Co" />
             <div class="card-body">
               <h5 class="card-title">Silva Lab Co</h5>
-              <p class="card-text">Filtration products built for plant-based and herbal use cases.</p>
+              <p class="card-text">Filtration products for plant-based and herbal use cases &mdash; grown to roughly $10K/month through retail and an Instagram shop.</p>
               <p class="text-muted small mb-2">E-commerce site launching soon to sell globally.</p>
               <a href="#" class="btn btn-branding-outline">Learn more</a>
             </div>
@@ -174,9 +182,9 @@
         }
 
         function openMailFallback(email) {
-          const subject = encodeURIComponent("Shop notify signup");
+          const subject = encodeURIComponent("Ventures notify signup");
           const body = encodeURIComponent(
-            `Please add me to your shop updates:\n\n${email}\n\n(Submitted from nicole-wu.com/shop)`
+            `Please add me to your ventures updates:\n\n${email}\n\n(Submitted from nicole-wu.com/ventures)`
           );
           window.location.href = `mailto:nanwu.nicole@gmail.com?subject=${subject}&body=${body}`;
           showMessage(

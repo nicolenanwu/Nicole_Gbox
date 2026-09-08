@@ -137,3 +137,59 @@ section.secondary .card-footer {
     padding: 90px 18px;
   }
 }
+
+/* ---------- Travel hub (destination grid) ---------- */
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.destination-card {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 150ms ease, border-color 150ms ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-border);
+}
+
+.destination-card img {
+  border-radius: 0;
+  margin-bottom: 0;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.destination-card .destination-body {
+  padding: 18px 20px;
+}
+
+.destination-card .destination-body h4 {
+  margin-bottom: 4px;
+}
+
+.destination-card .destination-body p {
+  margin-bottom: 0;
+  font-size: 0.92rem;
+}
+
+.destination-card.is-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-faint);
+  border-style: dashed;
+  min-height: 220px;
+  padding: 24px;
+}
+
