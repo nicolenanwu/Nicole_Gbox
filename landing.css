@@ -1,20 +1,36 @@
 /* =========================================================
    Landing page (Brittany Chiang-style layout)
    Loaded after style.css on index.html only — reuses design
-   tokens (colors, fonts, spacing) from style.css, but the
-   fixed-sidebar layout here is unique to this page.
+   tokens (colors, spacing) from style.css, but typography scale,
+   accent color, and layout proportions here are tuned to match
+   the reference site's actual measurements, not guessed.
    ========================================================= */
 
 body.landing-page {
   overflow-x: hidden;
+  /* Teal accent + Inter-style sans everywhere on this page only —
+     the rest of the site keeps its own blue/Playfair identity. */
+  --accent: #5eead4;
+  --accent-hover: #2dd4bf;
+  --accent-soft: rgba(45, 212, 191, 0.1);
+  --accent-border: rgba(94, 234, 212, 0.4);
+  font-family: var(--font-body);
+}
+
+.landing-page h1,
+.landing-page h2,
+.landing-page h3,
+.landing-page h4 {
+  font-family: var(--font-body);
 }
 
 .landing-wrap {
   display: flex;
   align-items: flex-start;
-  max-width: 1600px;
+  gap: 40px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 4vw, 64px);
+  padding: 0 clamp(20px, 4vw, 48px);
 }
 
 /* ---------- Sidebar ---------- */
@@ -22,28 +38,27 @@ body.landing-page {
 .side-panel {
   position: sticky;
   top: 0;
-  flex: 0 0 340px;
-  width: 340px;
+  flex: 0 0 clamp(260px, 38%, 380px);
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 40px 40px 40px 0;
+  justify-content: flex-start;
+  padding: 96px 0 40px;
 }
 
 .side-eyebrow {
-  font-family: var(--font-body);
   color: var(--accent);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   margin: 0 0 6px;
 }
 
 .side-name {
-  font-family: var(--font-display);
-  font-size: clamp(1.9rem, 2.6vw, 2.5rem);
-  margin: 0 0 8px;
-  line-height: 1.15;
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0 0 10px;
 }
 
 .side-name a {
@@ -52,24 +67,24 @@ body.landing-page {
 }
 
 .side-tagline {
-  font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.1rem;
+  letter-spacing: -0.01em;
   color: var(--text-muted);
-  margin: 0 0 18px;
+  margin: 0 0 16px;
 }
 
 .side-desc {
   font-size: 0.95rem;
+  line-height: 1.6;
   color: var(--text-faint);
   max-width: 300px;
-  margin-bottom: 34px;
+  margin-bottom: 40px;
 }
 
 .side-links {
   display: flex;
   flex-direction: column;
-  gap: 4px;
   margin-bottom: 40px;
 }
 
@@ -77,20 +92,20 @@ body.landing-page {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  padding: 8px 0;
+  padding: 7px 0;
   color: var(--text-faint);
   text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.075em;
   text-transform: uppercase;
   transition: color 150ms ease, padding-left 150ms ease;
 }
 
 .side-link .side-num {
   color: var(--accent);
-  font-size: 0.78rem;
-  font-weight: 500;
+  font-size: 0.72rem;
+  font-weight: 600;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -103,7 +118,7 @@ body.landing-page {
 
 .side-social {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -113,31 +128,28 @@ body.landing-page {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text-muted);
+  color: var(--text-faint);
   text-decoration: none;
   transition: all 150ms ease;
 }
 
 .side-social a:hover {
   color: var(--accent);
-  border-color: var(--accent-border);
   transform: translateY(-2px);
+}
+
+.side-social i {
+  font-size: 0.95rem;
 }
 
 .side-social .side-social-text {
   width: auto;
-  padding: 0 12px;
-  font-size: 0.7rem;
+  padding: 0 10px;
+  font-size: 0.65rem;
   font-weight: 700;
-}
-
-.side-menu-toggle {
-  display: none;
 }
 
 /* ---------- Content column ---------- */
@@ -145,11 +157,12 @@ body.landing-page {
 .content-panel {
   flex: 1 1 auto;
   min-width: 0;
-  padding: 90px 0 60px 60px;
+  max-width: 620px;
+  padding: 96px 0 60px;
 }
 
 .content-block {
-  margin-bottom: 130px;
+  margin-bottom: 90px;
   scroll-margin-top: 40px;
 }
 
@@ -160,20 +173,22 @@ body.landing-page {
 .content-heading {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 34px;
+  gap: 12px;
+  margin-bottom: 28px;
   white-space: nowrap;
 }
 
 .content-heading .heading-num {
-  font-family: var(--font-body);
   color: var(--accent);
-  font-size: 1.05rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 
 .content-heading h3 {
-  font-size: 1.55rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
   margin: 0;
 }
 
@@ -182,24 +197,16 @@ body.landing-page {
   display: block;
   height: 1px;
   width: 100%;
+  max-width: 220px;
   background: var(--border-strong);
   margin-left: 8px;
 }
 
 .content-block p {
-  max-width: 620px;
-}
-
-/* Intro block sits above 01. About, no numbering */
-.intro-block h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
-  margin: 0 0 12px;
-}
-
-.intro-block p {
-  font-size: 1.1rem;
-  max-width: 560px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 600px;
 }
 
 /* ---------- About ---------- */
@@ -208,30 +215,29 @@ body.landing-page {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .about-tags span {
-  font-size: 0.82rem;
-  color: var(--text);
-  background: var(--surface-alt);
-  border: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--accent);
+  background: var(--accent-soft);
   border-radius: var(--radius-pill);
-  padding: 6px 13px;
+  padding: 5px 12px;
 }
 
 /* ---------- Experience tabs ---------- */
 
 .exp-tabs {
   display: flex;
-  gap: 30px;
+  gap: 24px;
   align-items: flex-start;
 }
 
 .exp-tab-list {
   display: flex;
   flex-direction: column;
-  flex: 0 0 190px;
+  flex: 0 0 160px;
   border-left: 2px solid var(--border);
 }
 
@@ -241,9 +247,9 @@ body.landing-page {
   border-left: 2px solid transparent;
   margin-left: -2px;
   text-align: left;
-  padding: 12px 18px;
+  padding: 10px 16px;
   color: var(--text-faint);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-family: var(--font-body);
   font-weight: 600;
   cursor: pointer;
@@ -275,32 +281,34 @@ body.landing-page {
 }
 
 .exp-panel h4 {
-  margin-bottom: 4px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 3px;
 }
 
 .exp-panel .exp-meta {
   color: var(--text-faint);
-  font-size: 0.85rem;
-  margin-bottom: 14px;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
 }
 
 .exp-panel .about-tags {
   margin-top: 0;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 /* ---------- Featured ventures ---------- */
 
 .venture-card {
   display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 24px;
+  grid-template-columns: 76px 1fr;
+  gap: 20px;
   align-items: center;
-  padding: 22px;
+  padding: 18px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   transition: border-color 150ms ease, transform 150ms ease;
 }
 
@@ -312,37 +320,39 @@ body.landing-page {
 .venture-card img {
   border-radius: var(--radius-sm);
   background: var(--surface-alt);
-  padding: 12px;
+  padding: 10px;
 }
 
 .venture-card h4 {
-  margin-bottom: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
 }
 
 .venture-card p {
-  margin-bottom: 10px;
-  font-size: 0.95rem;
+  margin-bottom: 8px;
+  font-size: 0.88rem;
 }
 
 .venture-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .venture-tags span {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: var(--text-muted);
   background: var(--surface-alt);
   border: 1px solid var(--border);
-  padding: 3px 10px;
+  padding: 3px 9px;
   border-radius: var(--radius-pill);
 }
 
 .venture-card .pillar-cta {
   color: var(--accent);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-decoration: none;
 }
@@ -352,11 +362,11 @@ body.landing-page {
 .adventure-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 16px;
 }
 
 .adventure-card {
-  padding: 22px;
+  padding: 18px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -364,18 +374,20 @@ body.landing-page {
 
 .adventure-card i {
   color: var(--accent);
-  font-size: 1.3rem;
-  margin-bottom: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
   display: block;
 }
 
 .adventure-card h4 {
-  margin-bottom: 8px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin-bottom: 6px;
 }
 
 .adventure-card p {
-  font-size: 0.92rem;
-  margin-bottom: 10px;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
 }
 
 /* ---------- Archive ---------- */
@@ -383,17 +395,17 @@ body.landing-page {
 .archive-list {
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
 .archive-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
+  padding: 14px 0;
   border-bottom: 1px solid var(--border);
   text-decoration: none;
   color: var(--text);
+  font-size: 0.95rem;
   transition: padding-left 150ms ease;
 }
 
@@ -408,19 +420,20 @@ body.landing-page {
 
 .archive-item .archive-desc {
   color: var(--text-faint);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 400;
 }
 
 .archive-item i {
   color: var(--text-faint);
+  font-size: 0.85rem;
 }
 
 /* ---------- Contact ---------- */
 
 .contact-block {
   text-align: center;
-  max-width: 540px;
+  max-width: 480px;
   margin: 0 auto;
 }
 
@@ -430,13 +443,13 @@ body.landing-page {
 }
 
 .contact-block h3 {
-  font-family: var(--font-display);
-  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  font-size: 1.9rem;
+  font-weight: 700;
 }
 
 .contact-block p {
-  max-width: 480px;
-  margin: 0 auto 26px;
+  max-width: 420px;
+  margin: 0 auto 22px;
 }
 
 /* ---------- Responsive ---------- */
@@ -444,6 +457,7 @@ body.landing-page {
 @media (max-width: 1000px) {
   .landing-wrap {
     flex-direction: column;
+    gap: 0;
   }
 
   .side-panel {
@@ -451,8 +465,7 @@ body.landing-page {
     height: auto;
     width: 100%;
     flex: none;
-    padding: 40px 0 30px;
-    justify-content: flex-start;
+    padding: 40px 0 28px;
   }
 
   .side-desc {
@@ -462,8 +475,8 @@ body.landing-page {
   .side-links {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 24px;
+    gap: 4px 16px;
+    margin-bottom: 20px;
   }
 
   .side-link {
@@ -471,6 +484,7 @@ body.landing-page {
   }
 
   .content-panel {
+    max-width: none;
     padding: 0 0 50px;
   }
 
@@ -504,6 +518,10 @@ body.landing-page {
 }
 
 @media (max-width: 560px) {
+  .side-name {
+    font-size: 1.9rem;
+  }
+
   .venture-card {
     grid-template-columns: 1fr;
   }
