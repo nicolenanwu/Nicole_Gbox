@@ -27,6 +27,7 @@ body.landing-page {
 .landing-wrap {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   gap: clamp(40px, 6vw, 90px);
   max-width: var(--content-max);
   margin: 0 auto;
@@ -153,6 +154,7 @@ body.landing-page {
 
 .content-panel {
   flex: 1 1 auto;
+  max-width: 720px;
   min-width: 0;
   padding: 96px 0 60px;
 }
@@ -202,6 +204,11 @@ body.landing-page {
   font-size: 1rem;
   line-height: 1.7;
   color: var(--text-muted);
+}
+
+.content-block p strong {
+  color: var(--text);
+  font-weight: 700;
 }
 
 /* ---------- Shared tag pills (About, Experience, Ventures) ---------- */
