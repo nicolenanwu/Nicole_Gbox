@@ -306,6 +306,10 @@ body.landing-page {
   box-shadow: inset 0 1px 0 0 var(--border-strong), 0 0 0 1px var(--accent-border);
 }
 
+.entry-item:hover .entry-body h4 {
+  color: var(--accent);
+}
+
 .entry-meta {
   position: relative;
   z-index: 1;
@@ -317,10 +321,12 @@ body.landing-page {
 
 .entry-meta img {
   width: 100%;
-  max-width: 96px;
+  max-width: 140px;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
   border-radius: var(--radius-sm);
   background: var(--surface-alt);
-  padding: 10px;
+  padding: 14px;
   display: block;
 }
 
@@ -341,6 +347,7 @@ body.landing-page {
   font-weight: 700;
   color: var(--text);
   margin: 0 0 4px;
+  transition: color 150ms ease;
 }
 
 .entry-body p {
@@ -397,24 +404,25 @@ body.landing-page {
 
 /* ---------- Contact ---------- */
 
-.contact-block {
-  max-width: 640px;
-}
-
 .contact-block .content-heading::after {
   max-width: 140px;
 }
 
-.contact-block p {
-  max-width: 500px;
-  margin: 0 0 22px;
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.contact-layout p {
+  margin: 0;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-width: 460px;
 }
 
 .contact-field input,
@@ -471,6 +479,11 @@ body.landing-page {
   .landing-wrap {
     flex-direction: column;
     gap: 0;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .side-panel {
