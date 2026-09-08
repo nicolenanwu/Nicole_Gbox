@@ -7,7 +7,32 @@
 document.addEventListener("DOMContentLoaded", function () {
   initScrollSpy();
   initContactForm();
+  initCursorSpotlight();
 });
+
+function initCursorSpotlight() {
+  const spotlight = document.querySelector(".cursor-spotlight");
+  if (!spotlight || !window.matchMedia("(hover: hover)").matches) return;
+
+  let ticking = false;
+  let lastX = 0;
+  let lastY = 0;
+
+  function applySpotlight() {
+    spotlight.style.setProperty("--spot-x", lastX + "px");
+    spotlight.style.setProperty("--spot-y", lastY + "px");
+    ticking = false;
+  }
+
+  document.addEventListener("mousemove", function (e) {
+    lastX = e.clientX;
+    lastY = e.clientY;
+    if (!ticking) {
+      window.requestAnimationFrame(applySpotlight);
+      ticking = true;
+    }
+  });
+}
 
 function initScrollSpy() {
   const links = document.querySelectorAll(".side-link");

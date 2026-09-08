@@ -32,6 +32,30 @@ body.landing-page {
   max-width: var(--content-max);
   margin: 0 auto;
   padding: 0 clamp(24px, 4vw, 64px);
+  position: relative;
+  z-index: 1;
+}
+
+/* Cursor-following spotlight: a soft radial glow that tracks mouse
+   position, updated via JS-set CSS custom properties (landing.js).
+   Fixed + pointer-events:none so it never blocks clicks/hover below it. */
+
+.cursor-spotlight {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    600px at var(--spot-x, 50%) var(--spot-y, 20%),
+    rgba(94, 234, 212, 0.07),
+    transparent 80%
+  );
+}
+
+@media (hover: none) {
+  .cursor-spotlight {
+    display: none;
+  }
 }
 
 /* ---------- Sidebar ---------- */
