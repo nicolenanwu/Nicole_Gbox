@@ -6,16 +6,25 @@ export default async (request) => {
   try {
     const contentType = request.headers.get("content-type") || "";
     let email = "";
+    let name = "";
+    let message = "";
+    let source = "";
 
     if (contentType.includes("application/json")) {
       const body = await request.json();
       email = String(body?.email || "").trim();
+      name = String(body?.name || "").trim();
+      message = String(body?.message || "").trim();
+      source = String(body?.source || "").trim();
     } else if (
       contentType.includes("application/x-www-form-urlencoded") ||
       contentType.includes("multipart/form-data")
     ) {
       const form = await request.formData();
       email = String(form.get("email") || "").trim();
+      name = String(form.get("name") || "").trim();
+      message = String(form.get("message") || "").trim();
+      source = String(form.get("source") || "").trim();
     }
 
     if (!email || !email.includes("@")) {
@@ -40,18 +49,36 @@ export default async (request) => {
       );
     }
 
+    // This one endpoint handles two shapes of submission: a quick "notify
+    // me" signup from the Ventures page (just an email), and a full contact
+    // form from the homepage (email + message). We branch on whether a
+    // message was sent rather than duplicating the Resend-calling logic.
+    const isContactForm = message.length > 0;
+    const subject = isContactForm
+      ? `New message from ${name || email} via nicole-wu.com`
+      : "New ventures notify signup";
+    const text = isContactForm
+      ? `From: ${name || "(no name given)"} <${email}>\nSource: ${source || "/index.html"}\n\n${message}`
+      : `New signup: ${email}\n\nSource: ${source || "/ventures.html"}`;
+
+    const resendPayload = {
+      from: FROM_EMAIL,
+      to: TO_EMAIL,
+      subject,
+      text
+    };
+    // Let Nicole hit "reply" and land straight in the visitor's inbox.
+    if (isContactForm) {
+      resendPayload.reply_to = email;
+    }
+
     const resp = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${RESEND_API_KEY}`,
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({
-        from: FROM_EMAIL,
-        to: TO_EMAIL,
-        subject: "New ventures notify signup",
-        text: `New signup: ${email}\n\nSource: /ventures.html`
-      })
+      body: JSON.stringify(resendPayload)
     });
 
     if (!resp.ok) {
@@ -70,4 +97,3 @@ export default async (request) => {
     );
   }
 };
-

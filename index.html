@@ -289,10 +289,30 @@
           <h3>Get in touch</h3>
           <p>
             Always happy to talk product, data, aviation, or where to find
-            the best hot pot in whatever city you're in. Email is the
-            fastest way to reach me.
+            the best hot pot in whatever city you're in. Drop a note below,
+            or email me directly.
           </p>
-          <a href="mailto:nanwu.nicole@gmail.com" class="btn-branding">Say hello</a>
+
+          <form id="contact-form" class="contact-form">
+            <div class="contact-field">
+              <label for="contact-name" class="visually-hidden">Name (optional)</label>
+              <input id="contact-name" name="name" type="text" placeholder="Name (optional)" />
+            </div>
+            <div class="contact-field">
+              <label for="contact-email" class="visually-hidden">Your email</label>
+              <input id="contact-email" name="email" type="email" placeholder="Your email" required />
+            </div>
+            <div class="contact-field">
+              <label for="contact-message" class="visually-hidden">Message</label>
+              <textarea id="contact-message" name="message" rows="4" placeholder="What's on your mind?" required></textarea>
+            </div>
+            <button type="submit" class="btn-branding">Send message</button>
+            <div id="contact-status" class="contact-status" style="display:none;"></div>
+          </form>
+
+          <p class="contact-alt">
+            Prefer email? <a href="mailto:nanwu.nicole@gmail.com">nanwu.nicole@gmail.com</a>
+          </p>
 
           <footer style="margin-top: 60px;">
             <p style="font-size: 0.85rem;">
