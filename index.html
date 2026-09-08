@@ -22,10 +22,8 @@
       name="description"
       content="Nicole Wu is a Northern California-based product leader, private pilot, and founder. She builds AI-powered product and data systems by day, and runs two small consumer brands and travels with her Airstream and Border Collie by everything else."
     />
-
     <title>Nicole Wu</title>
 
-    <!-- CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -38,453 +36,285 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-
-    <!-- JS libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="landing.css" />
     <script
       src="https://kit.fontawesome.com/ddc3ee268a.js"
       crossorigin="anonymous"
     ></script>
   </head>
 
-  <body>
-    <div class="container">
-      <nav class="d-flex justify-content-between align-items-center py-3">
-        <a href="index.html" title="Homepage">
-          <img src="media/NW stand.png" class="logo" alt="Nicole Wu logo" />
-        </a>
+  <body class="landing-page">
+    <div class="landing-wrap">
+      <!-- Sidebar: identity, numbered nav, socials -->
+      <header class="side-panel">
+        <div class="side-panel-inner">
+          <p class="side-eyebrow">Hi, my name is</p>
+          <h1 class="side-name"><a href="index.html">Nicole Wu.</a></h1>
+          <h2 class="side-tagline">I build products powered by data and AI.</h2>
+          <p class="side-desc">
+            Product leader, founder, and private pilot based in Northern
+            California.
+          </p>
 
-        <ul class="list-unstyled d-flex mb-0 nav-links">
-          <li class="active">
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="about.html">About</a>
-          </li>
-          <li>
-            <a href="work.html">Work</a>
-          </li>
-          <li>
-            <a href="ventures.html">Ventures</a>
-          </li>
-          <li>
-            <a href="Travel/index.html">Travel</a>
-          </li>
-        </ul>
-        <ul class="list-unstyled d-flex mb-0 nav-social">
-          <li>
-            <a href="https://www.linkedin.com/in/nicolenanwu" title="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
+          <div class="side-links">
+            <a href="#about" class="side-link"><span class="side-num">01.</span> About</a>
+            <a href="#experience" class="side-link"><span class="side-num">02.</span> Experience</a>
+            <a href="#ventures" class="side-link"><span class="side-num">03.</span> Ventures</a>
+            <a href="#adventures" class="side-link"><span class="side-num">04.</span> Adventures</a>
+            <a href="#archive" class="side-link"><span class="side-num">05.</span> Archive</a>
+            <a href="#contact" class="side-link"><span class="side-num">06.</span> Contact</a>
+          </div>
+
+          <ul class="side-social">
+            <li><a href="https://www.linkedin.com/in/nicolenanwu" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://www.github.com/nicolenanwu" title="GitHub"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.facebook.com/nanwunicole" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://www.instagram.com/nicolenanwu12/" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+            <li>
+              <a
+                href="https://www.xiaohongshu.com/user/profile/610f8002000000000101fd87"
+                title="Xiaohongshu"
+                class="side-social-text"
+                >小红书</a
+              >
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Scrolling content -->
+      <main class="content-panel">
+        <div class="content-block intro-block">
+          <h1>I turn messy data into products people trust.</h1>
+          <p>
+            Eleven-plus years building product &mdash; from oil rigs to cloud
+            SaaS to AI-powered data platforms. On the side I run two small
+            consumer brands and fly a Cessna whenever the weather cooperates.
+          </p>
+        </div>
+
+        <!-- 01. About -->
+        <div id="about" class="content-block">
+          <div class="content-heading">
+            <span class="heading-num">01.</span>
+            <h3>About</h3>
+          </div>
+          <p>
+            I started as an engineer, then spent two years as a field
+            engineer running drilling operations before an INSEAD MBA pulled
+            me toward the business side of hard problems. Since then I've
+            moved through hardware, enterprise SaaS, and now data and AI
+            platforms &mdash; always staying close to the messy, technical
+            middle of a problem, not just the slide about it.
+          </p>
+          <p>
+            Outside of work: two early-stage consumer brands, a Private Pilot
+            License earned in 2025, an Airstream, and a Border Collie named
+            Hera who has opinions about hiking pace.
+          </p>
+          <div class="about-tags">
+            <span>Product Strategy</span>
+            <span>Data Governance</span>
+            <span>Applied ML</span>
+            <span>0&rarr;1 Building</span>
+            <span>Aviation</span>
+          </div>
+        </div>
+
+        <!-- 02. Experience -->
+        <div id="experience" class="content-block">
+          <div class="content-heading">
+            <span class="heading-num">02.</span>
+            <h3>Experience</h3>
+          </div>
+
+          <div class="exp-tabs">
+            <div class="exp-tab-list" role="tablist">
+              <button class="exp-tab is-active" data-target="exp-walmart" type="button">Walmart</button>
+              <button class="exp-tab" data-target="exp-amazon" type="button">Amazon</button>
+              <button class="exp-tab" data-target="exp-fortive" type="button">Fortive</button>
+              <button class="exp-tab" data-target="exp-early" type="button">Earlier</button>
+            </div>
+
+            <div class="exp-panels">
+              <div class="exp-panel is-active" id="exp-walmart">
+                <h4>Walmart Last Mile Delivery</h4>
+                <div class="exp-meta">Current</div>
+                <div class="about-tags">
+                  <span>Product</span>
+                  <span>Master Data Management</span>
+                  <span>Data Governance</span>
+                </div>
+                <p>
+                  Leading the data foundations behind a large-scale delivery
+                  driver network &mdash; the systems and standards that keep
+                  that data trustworthy across engineering and finance.
+                </p>
+              </div>
+
+              <div class="exp-panel" id="exp-amazon">
+                <h4>Amazon Global Logistics</h4>
+                <div class="exp-meta">2020 &ndash; 2024</div>
+                <div class="about-tags">
+                  <span>Product</span>
+                  <span>Data Platforms</span>
+                  <span>Applied ML</span>
+                </div>
+                <p>
+                  Built data platforms and ML-powered automation supporting
+                  global financial operations, from billing to
+                  customer-facing agentic AI.
+                </p>
+              </div>
+
+              <div class="exp-panel" id="exp-fortive">
+                <h4>Fortive Corporation</h4>
+                <div class="exp-meta">2016 &ndash; 2020</div>
+                <div class="about-tags">
+                  <span>Product</span>
+                  <span>Hardware NPI</span>
+                  <span>SaaS</span>
+                </div>
+                <p>
+                  Leadership Development Program with four rotations,
+                  progressing from corporate systems into hardware
+                  new-product introduction and then SaaS product management
+                  across the portfolio.
+                </p>
+              </div>
+
+              <div class="exp-panel" id="exp-early">
+                <h4>Earlier career</h4>
+                <div class="exp-meta">2009 &ndash; 2015</div>
+                <div class="about-tags">
+                  <span>Field Engineering</span>
+                  <span>Product Marketing</span>
+                </div>
+                <p>
+                  Started in field engineering on oil &amp; gas drilling
+                  operations, then moved through field operations and product
+                  marketing roles before transitioning fully into product
+                  management.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03. Ventures -->
+        <div id="ventures" class="content-block">
+          <div class="content-heading">
+            <span class="heading-num">03.</span>
+            <h3>Ventures</h3>
+          </div>
+          <p>Two consumer brands, built end to end on the side.</p>
+
+          <div class="venture-card">
+            <img src="media/lefaubourg.svg" alt="LeFaubourg Trading" />
+            <div>
+              <h4>LeFaubourg Trading</h4>
+              <div class="venture-tags">
+                <span>Sourcing</span>
+                <span>Branding</span>
+                <span>Amazon Marketplace</span>
+              </div>
+              <p>Home d&eacute;cor, sourced directly and sold through the Amazon US marketplace.</p>
+              <a href="ventures.html" class="pillar-cta">Learn more &rarr;</a>
+            </div>
+          </div>
+
+          <div class="venture-card">
+            <img src="media/silvalogo.svg" alt="Silva Lab Co" />
+            <div>
+              <h4>Silva Lab Co</h4>
+              <div class="venture-tags">
+                <span>Product Development</span>
+                <span>Retail</span>
+                <span>E-commerce</span>
+              </div>
+              <p>Filtration products built for plant-based and herbal use cases.</p>
+              <a href="ventures.html" class="pillar-cta">Learn more &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04. Adventures -->
+        <div id="adventures" class="content-block">
+          <div class="content-heading">
+            <span class="heading-num">04.</span>
+            <h3>Adventures</h3>
+          </div>
+          <p>The non-work side of the resume: flying, the open road, and a Border Collie who comes along for most of it.</p>
+
+          <div class="adventure-grid">
+            <div class="adventure-card">
+              <i class="fas fa-plane"></i>
+              <h4>Flying</h4>
+              <p>Earned my Private Pilot License in 2025 and fly regularly out of Northern California. Learning to fly rewired how I think about risk and checklists at work, too.</p>
+            </div>
+            <div class="adventure-card">
+              <i class="fas fa-caravan"></i>
+              <h4>Airstream &amp; Hera</h4>
+              <p>Took our Airstream up and down the West Coast in 2024, and adopted Hera, our Border Collie, along the way. She joins most trips since.</p>
+            </div>
+          </div>
+
+          <p style="margin-top: 20px;">
+            <a href="Travel/index.html" class="pillar-cta">See where I've traveled &rarr;</a>
+          </p>
+        </div>
+
+        <!-- 05. Archive -->
+        <div id="archive" class="content-block">
+          <div class="content-heading">
+            <span class="heading-num">05.</span>
+            <h3>Archive</h3>
+          </div>
+          <p>More detail on any of the above, plus an earlier version of this site.</p>
+
+          <div class="archive-list">
+            <a href="about.html" class="archive-item">
+              <span><span class="archive-label">Full story</span> &mdash; <span class="archive-desc">the long version of About</span></span>
+              <i class="fas fa-arrow-right"></i>
             </a>
-          </li>
-          <li>
-            <a href="https://www.github.com/nicolenanwu" title="GitHub">
-              <i class="fab fa-github"></i>
+            <a href="work.html" class="archive-item">
+              <span><span class="archive-label">Career timeline</span> &mdash; <span class="archive-desc">the full Work page</span></span>
+              <i class="fas fa-arrow-right"></i>
             </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/nanwunicole" title="Facebook">
-              <i class="fab fa-facebook-f"></i>
+            <a href="Travel/index.html" class="archive-item">
+              <span><span class="archive-label">Travel notes</span> &mdash; <span class="archive-desc">city guides and trip write-ups</span></span>
+              <i class="fas fa-arrow-right"></i>
             </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/nicolenanwu12/"
-              title="Instagram"
-            >
-              <i class="fab fa-instagram"></i>
+            <a href="classic.html" class="archive-item">
+              <span><span class="archive-label">Classic site</span> &mdash; <span class="archive-desc">an earlier, multi-page version of this site</span></span>
+              <i class="fas fa-arrow-right"></i>
             </a>
-          </li>
-          <li>
-            <a
-              href="https://www.xiaohongshu.com/user/profile/610f8002000000000101fd87"
-              title="Xiaohongshu"
-              class="nav-social-text"
-              >小红书</a
-            >
-          </li>
-        </ul>
-      </nav>
+          </div>
+        </div>
+
+        <!-- 06. Contact -->
+        <div id="contact" class="content-block contact-block">
+          <p class="side-eyebrow">06. What's next</p>
+          <h3>Get in touch</h3>
+          <p>
+            Always happy to talk product, data, aviation, or where to find
+            the best hot pot in whatever city you're in. Email is the
+            fastest way to reach me.
+          </p>
+          <a href="mailto:nanwu.nicole@gmail.com" class="btn-branding">Say hello</a>
+
+          <footer style="margin-top: 60px;">
+            <p style="font-size: 0.85rem;">
+              Designed and built by Nicole Wu. Open-sourced on
+              <a href="https://github.com/nicolenanwu" target="_blank" rel="noopener noreferrer">GitHub</a>,
+              hosted on
+              <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">Netlify</a>.
+            </p>
+          </footer>
+        </div>
+      </main>
     </div>
 
-    <header class="hero text-center">
-      <p class="hero-kicker">PRODUCT, DATA &amp; AI</p>
-      <p>Hi, I'm</p>
-      <h1>Nicole Wu</h1>
-      <h2 class="mb-5">
-        I build AI-powered product and data platforms for a living, run two
-        small consumer brands on the side, and fly a Cessna for fun.
-      </h2>
-      <a
-        href="https://www.linkedin.com/in/nicolenanwu"
-        class="btn-branding"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Connect on LinkedIn
-      </a>
-      <div class="hero-highlights">
-        <span>11+ years in product</span>
-        <span>Private Pilot</span>
-        <span>Founder x2</span>
-        <span>INSEAD MBA</span>
-      </div>
-    </header>
-
-    <p class="text-center m-5 section-lead">
-      Product leadership, entrepreneurial bets, and adventures along the way
-    </p>
-
-    <!-- Pillars: quick navigation into the three sides of the site -->
-    <section class="pillars-section">
-      <div class="pillars">
-        <a href="work.html" class="pillar-card">
-          <i class="fas fa-microchip pillar-icon"></i>
-          <h4>Product &amp; AI</h4>
-          <p>
-            Data governance, ML-powered automation, and hardware-to-SaaS
-            product leadership across Walmart, Amazon, and Fortive.
-          </p>
-          <span class="pillar-cta">See the work &rarr;</span>
-        </a>
-
-        <a href="ventures.html" class="pillar-card">
-          <i class="fas fa-store pillar-icon"></i>
-          <h4>Entrepreneur</h4>
-          <p>
-            Co-founder of two consumer brands, built end to end &mdash;
-            sourcing, branding, and e-commerce, tested with real revenue.
-          </p>
-          <span class="pillar-cta">Meet the brands &rarr;</span>
-        </a>
-
-        <a href="Travel/index.html" class="pillar-card">
-          <i class="fas fa-plane pillar-icon"></i>
-          <h4>Adventurer</h4>
-          <p>
-            Private pilot, Airstream road-tripper, and always chasing the next
-            city's best hot pot with my Border Collie, Hera, in tow.
-          </p>
-          <span class="pillar-cta">See where I've been &rarr;</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="focus-strip">
-      <h4>Selected focus areas</h4>
-      <div class="focus-tags">
-        <span>AI Product Strategy</span>
-        <span>Data Governance &amp; MDM</span>
-        <span>Experimentation and Launch</span>
-        <span>Aviation and Risk Thinking</span>
-      </div>
-    </section>
-
-    <!-- AI section: daily life + product management -->
-    <section class="grid grid-2-columns card-tile">
-      <div>
-        <img
-          src="media/AI.png"
-          alt="Nicole AI illustration"
-          class="img-responsive"
-        />
-      </div>
-
-      <div>
-        <p class="section-kicker">AI LAB</p>
-        <h3 class="mb-3">How AI shows up in my day</h3>
-
-        <p class="text-muted small mb-3">
-          Two quick demos of how I use AI — one for daily operations, one for
-          product decisions.
-        </p>
-
-        <!-- Daily life AI block -->
-        <div class="form-container mb-4 text-center">
-          <h5 class="mb-2">AI in daily life</h5>
-          <div class="ai-badges">
-            <span class="ai-badge">Cursor workflow</span>
-            <span class="ai-badge">LLM assisted</span>
-            <span class="ai-badge">Ops-focused</span>
-          </div>
-          <div class="ai-presets" id="daily-ai-presets">
-            <button class="preset-chip active" type="button" data-preset="trip">
-              Trip planning
-            </button>
-            <button class="preset-chip" type="button" data-preset="focus">
-              Focus routine
-            </button>
-            <button class="preset-chip" type="button" data-preset="inbox">
-              Inbox cleanup
-            </button>
-          </div>
-          <button id="daily-ai-button" type="button">
-            Generate ideas
-          </button>
-          <div id="daily-ai-output" class="mt-2 ai-output">
-            Click the button to get 5 practical ways AI can help with your
-            day-to-day routines.
-          </div>
-          <div id="daily-ai-meta" class="ai-meta">Not generated yet</div>
-          <div class="ai-actions">
-            <button id="daily-ai-regenerate" type="button" class="ai-action-btn">
-              Regenerate
-            </button>
-            <button id="daily-ai-copy" type="button" class="ai-action-btn">
-              Copy
-            </button>
-          </div>
-        </div>
-
-        <!-- Product management AI block -->
-        <div class="form-container text-center">
-          <h5 class="mb-2">AI in product management</h5>
-          <div class="ai-badges">
-            <span class="ai-badge">PM copilot</span>
-            <span class="ai-badge">Fast synthesis</span>
-            <span class="ai-badge">Decision-ready</span>
-          </div>
-          <div class="ai-presets" id="pm-ai-presets">
-            <button class="preset-chip active" type="button" data-preset="prd">
-              PRD draft
-            </button>
-            <button class="preset-chip" type="button" data-preset="experiment">
-              Experiment plan
-            </button>
-            <button class="preset-chip" type="button" data-preset="risk">
-              Risk review
-            </button>
-          </div>
-          <button id="pm-ai-button" type="button">Generate ideas</button>
-          <div id="pm-ai-output" class="mt-2 ai-output">
-            Click the button to get 5 ways to apply AI in product management
-            decisions.
-          </div>
-          <div id="pm-ai-meta" class="ai-meta">Not generated yet</div>
-          <div class="ai-actions">
-            <button id="pm-ai-regenerate" type="button" class="ai-action-btn">
-              Regenerate
-            </button>
-            <button id="pm-ai-copy" type="button" class="ai-action-btn">
-              Copy
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quick intro teaser -> About -->
-    <section class="grid grid-2-columns card-tile">
-      <div>
-        <p class="section-kicker">ABOUT</p>
-        <p>
-          Engineer turned oil-field engineer turned product leader
-          &mdash; with an INSEAD MBA, a Private Pilot License, and a Border
-          Collie named Hera somewhere in the middle of that sentence.
-        </p>
-        <p>
-          I moved to Northern California to be closer to family and build the
-          things I actually care about: better AI-powered products, two small
-          brands, and a habit of saying yes to adventures.
-        </p>
-        <a href="about.html" class="pillar-cta">Read my full story &rarr;</a>
-      </div>
-
-      <div>
-        <img
-          src="media/nicole.jpg"
-          alt="Nicole in Alaska"
-          class="img-responsive"
-        />
-      </div>
-    </section>
-
-    <!-- Milestones teaser -->
-    <section class="grid grid-2-columns card-tile">
-      <div>
-        <p class="section-kicker">MILESTONES</p>
-        <h4>Recent chapters</h4>
-        <p>
-          2024: crossed the West Coast in our Airstream and adopted Hera.
-          2025: launched two trading businesses and earned my Private Pilot
-          License. 2026: still writing it &mdash; new experiments in AI,
-          aviation, and side businesses are always in progress.
-        </p>
-        <a href="about.html#milestones" class="pillar-cta"
-          >See the full timeline &rarr;</a
-        >
-      </div>
-
-      <div>
-        <video
-          src="media/nicoleira.mp4"
-          class="img-fluid"
-          alt="Travel animation"
-          controls
-        ></video>
-      </div>
-    </section>
-
-    <!-- Gallery / Instagram section -->
-    <section class="mt-5">
-      <h2 class="text-center">Gallery</h2>
-      <h3 class="text-center mb-4">My Latest Posts</h3>
-      <p class="text-center text-muted mb-4 small">
-        A few recent stories pulled from Instagram—tap any card to view the full
-        post.
-      </p>
-
-      <div class="instagram-embeds">
-        <div class="grid grid-3-columns">
-          <!-- Post 1 -->
-          <div class="instagram-card">
-            <blockquote
-              class="instagram-media"
-              data-instgrm-captioned
-              data-instgrm-permalink="https://www.instagram.com/p/DKcAdqCyFzp/?igsh=NTc4MTIwNjQ2YQ=="
-              data-instgrm-version="14"
-              style="
-                background: #fff;
-                border: 0;
-                border-radius: 3px;
-                box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5),
-                  0 1px 10px 0 rgba(0, 0, 0, 0.15);
-                margin: 1px;
-                max-width: 540px;
-                min-width: 326px;
-                padding: 0;
-                width: calc(100% - 2px);
-              "
-            ></blockquote>
-          </div>
-
-          <!-- Post 2 -->
-          <div class="instagram-card">
-            <blockquote
-              class="instagram-media"
-              data-instgrm-captioned
-              data-instgrm-permalink="https://www.instagram.com/reel/C_zkTS_RRC_/?igsh=NTc4MTIwNjQ2YQ=="
-              data-instgrm-version="14"
-              style="
-                background: #fff;
-                border: 0;
-                border-radius: 3px;
-                box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5),
-                  0 1px 10px 0 rgba(0, 0, 0, 0.15);
-                margin: 1px;
-                max-width: 540px;
-                min-width: 326px;
-                padding: 0;
-                width: calc(100% - 2px);
-              "
-            ></blockquote>
-          </div>
-
-          <!-- Post 3 -->
-          <div class="instagram-card">
-            <blockquote
-              class="instagram-media"
-              data-instgrm-captioned
-              data-instgrm-permalink="https://www.instagram.com/reel/DDEKhJxRu7R/?igsh=NTc4MTIwNjQ2YQ=="
-              data-instgrm-version="14"
-              style="
-                background: #fff;
-                border: 0;
-                border-radius: 3px;
-                box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5),
-                  0 1px 10px 0 rgba(0, 0, 0, 0.15);
-                margin: 1px;
-                max-width: 540px;
-                min-width: 326px;
-                padding: 0;
-                width: calc(100% - 2px);
-              "
-            ></blockquote>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <div class="container">
-      <footer class="pt-4">
-        <div class="contact-box justify-content-between mb-1">
-          <strong>What's new</strong>
-          <span class="text-muted">(updated 09/08/2026)</span>
-          <h6 class="text-muted mt-2">
-            Restructured the site into Home / About / Work / Ventures /
-            Travel, added a dedicated career timeline, and gave Travel its own
-            hub page.
-          </h6>
-        </div>
-
-        <div class="d-flex justify-content-center mb-3">
-          <a
-            href="mailto:nanwu.nicole@gmail.com"
-            class="email-link"
-            title="Email Nicole"
-          >
-            <h6 class="mb-0">nanwu.nicole@gmail.com</h6>
-          </a>
-        </div>
-
-        <div class="social-links d-flex justify-content-center gap-3 mb-2">
-          <a
-            href="https://www.github.com/nicolenanwu"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="GitHub Profile"
-          >
-            <i class="fab fa-github"></i>
-          </a>
-          <a
-            href="https://www.instagram.com/nicolenanwu12/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Instagram Profile"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a
-            href="https://twitter.com/NicoleW47773037"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Twitter Profile"
-          >
-            <i class="fab fa-twitter"></i>
-          </a>
-        </div>
-
-        <h6 class="text-center mt-3 mb-4">
-          Designed and built by Nicole Wu. Open-sourced on
-          <a
-            href="https://github.com/nicolenanwu"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            my GitHub </a
-          >, hosted on
-          <a
-            href="https://www.netlify.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Netlify </a
-          >.
-        </h6>
-      </footer>
-    </div>
-
-    <!-- Instagram embed script -->
-    <script async src="https://www.instagram.com/embed.js"></script>
-
-    <!-- Your AI script -->
-    <script src="index.js"></script>
+    <script src="landing.js"></script>
   </body>
 </html>

@@ -675,12 +675,13 @@ footer a:hover,
   font-size: 0.95rem;
 }
 
-.pillar-card .pillar-cta {
+.pillar-cta {
   display: inline-block;
   margin-top: 16px;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--accent);
+  text-decoration: none;
 }
 
 /* ---------- Timeline (work page) ---------- */
