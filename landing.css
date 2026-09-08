@@ -507,18 +507,6 @@ body.landing-page {
   color: var(--text-faint);
 }
 
-.contact-alt {
-  margin-top: 18px;
-  font-size: 0.85rem;
-  color: var(--text-faint);
-}
-
-.contact-alt a {
-  color: var(--accent);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1000px) {
