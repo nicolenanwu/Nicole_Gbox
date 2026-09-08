@@ -27,10 +27,10 @@ body.landing-page {
 .landing-wrap {
   display: flex;
   align-items: flex-start;
-  gap: 40px;
-  max-width: 1280px;
+  gap: clamp(40px, 6vw, 90px);
+  max-width: var(--content-max);
   margin: 0 auto;
-  padding: 0 clamp(20px, 4vw, 48px);
+  padding: 0 clamp(24px, 4vw, 64px);
 }
 
 /* ---------- Sidebar ---------- */
@@ -38,7 +38,7 @@ body.landing-page {
 .side-panel {
   position: sticky;
   top: 0;
-  flex: 0 0 clamp(260px, 38%, 380px);
+  flex: 0 0 clamp(280px, 27vw, 440px);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -157,7 +157,6 @@ body.landing-page {
 .content-panel {
   flex: 1 1 auto;
   min-width: 0;
-  max-width: 620px;
   padding: 96px 0 60px;
 }
 
@@ -206,7 +205,7 @@ body.landing-page {
   font-size: 1rem;
   line-height: 1.7;
   color: var(--text-muted);
-  max-width: 600px;
+  max-width: 640px;
 }
 
 /* ---------- About ---------- */
