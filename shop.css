@@ -1,0 +1,54 @@
+/* =========================================================
+   Shop page — page-specific overrides
+   Loaded after style.css on shop.html only
+   ========================================================= */
+
+.shop-page header.hero {
+  padding-top: 72px;
+  padding-bottom: 56px;
+}
+
+.shop-page .card-img-top {
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  height: 200px;
+  object-fit: cover;
+  background: var(--surface-alt);
+  padding: 20px;
+}
+
+.shop-page .card-title {
+  margin-bottom: 6px;
+  font-size: 1.15rem;
+}
+
+.shop-page .card-text {
+  font-size: 0.98rem;
+  margin-bottom: 10px;
+}
+
+#notify-form input.form-control {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+}
+
+#notify-form input.form-control:focus {
+  background: var(--surface-alt);
+  color: var(--text);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+#notify-form input.form-control::placeholder {
+  color: var(--text-faint);
+}
+
+#notify-message.text-success {
+  color: #8fd8a4;
+}
+
+#notify-message.text-danger {
+  color: #f2a4a4;
+}

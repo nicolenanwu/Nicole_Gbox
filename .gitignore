@@ -1,0 +1,6 @@
+.DS_Store
+node_modules/
+.env
+
+# Local-only convenience launcher, not needed on GitHub/Netlify
+Open Website.command

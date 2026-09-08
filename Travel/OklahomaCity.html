@@ -30,26 +30,11 @@
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../Travel/style.css" />
-
-    <!-- Page-specific styles -->
-    <style>
-      .instagram-embeds blockquote.instagram-media {
-        background: #fff;
-        border: 0;
-        border-radius: 3px;
-        box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5),
-          0 1px 10px 0 rgba(0, 0, 0, 0.15);
-        margin: 1px;
-        max-width: 540px;
-        min-width: 326px;
-        padding: 0;
-        width: calc(100% - 2px);
-      }
-    </style>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="travel.css" />
 
     <!-- JS libraries -->
     <script
@@ -68,38 +53,38 @@
   </head>
 
   <body>
-    <!-- NAVBAR -->
     <div class="container">
       <nav class="d-flex justify-content-between align-items-center">
         <a href="https://nicole-wu.com" title="Homepage">
-          <img
-            src="media/NW stand.png"
-            class="logo d-none d-lg-block"
-            alt="Nicole Wu logo"
-          />
-          <img
-            src="media/NW stand.png"
-            class="logo d-block d-lg-none"
-            alt="Nicole Wu logo"
-          />
+          <img src="media/NW stand.png" class="logo" alt="Nicole Wu logo" />
         </a>
 
-        <ul class="d-flex list-unstyled mb-0 gap-3">
-          <li class="active">
+        <ul class="list-unstyled d-flex mb-0 nav-links">
+          <li>
             <a href="https://nicole-wu.com" title="Homepage">Home</a>
+          </li>
+          <li>
+            <a href="../shop.html">Shop</a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/nicolenanwu">LinkedIn</a>
           </li>
+        </ul>
+        <ul class="list-unstyled d-flex mb-0 nav-social">
           <li>
-            <a href="https://www.facebook.com/nanwunicole">Facebook</a>
+            <a href="https://www.facebook.com/nanwunicole" title="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/nicolenanwu12/">Instagram</a>
+            <a href="https://www.instagram.com/nicolenanwu12/" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
           </li>
           <li>
             <a
               href="https://www.xiaohongshu.com/user/profile/610f8002000000000101fd87"
+              title="Xiaohongshu"
               >小红书</a
             >
           </li>
@@ -109,26 +94,26 @@
 
     <!-- HERO -->
     <header class="heroOC">
-      <p>Welcome to</p>
+      <p>Travel notes</p>
       <h1>Oklahoma City</h1>
       <h2 class="mb-5">
-        Notes from a product and AI leader using modern tools to plan trips and
-        share what is useful on the ground.
+        A few favorite spots from a recent trip, planned with AI-assisted
+        research and a bit of local hunting.
       </h2>
     </header>
 
     <main>
-      <p class="text-center m-5">
-        Considering a trip to Oklahoma City? These are a few favorite spots,
-        documented as part of an AI-assisted travel planning and storytelling
-        experiment.
+      <p class="text-center m-5 section-lead">
+        Thinking about a trip to OKC? Here's what stood out — gaming, one
+        unforgettable dinner spot, a quiet garden, and surprisingly good hot
+        pot.
       </p>
 
       <!-- SECTION: CASINO -->
       <section class="grid grid-2-columns">
         <div>
           <img
-            src="../Travel/media/casino.png"
+            src="media/casino.png"
             alt="Casino in Oklahoma"
             class="img-responsive"
           />
@@ -161,7 +146,7 @@
 
         <div>
           <img
-            src="../Travel/media/restaurant.png"
+            src="media/restaurant.png"
             alt="Interior of Tellers restaurant"
             class="img-responsive"
           />
@@ -172,7 +157,7 @@
       <section class="grid grid-2-columns">
         <div>
           <img
-            src="../Travel/media/garden.png"
+            src="media/garden.png"
             alt="Botanical garden in winter"
             class="img-responsive"
           />
