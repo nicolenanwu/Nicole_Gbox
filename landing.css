@@ -350,6 +350,19 @@ body.landing-page {
   transition: color 150ms ease;
 }
 
+.entry-link-icon {
+  font-size: 0.7em;
+  margin-left: 7px;
+  opacity: 0;
+  transform: translate(-2px, 2px);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.entry-item:hover .entry-link-icon {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 .entry-body p {
   font-size: 0.92rem;
   line-height: 1.65;
