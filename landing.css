@@ -598,6 +598,7 @@ body.landing-page {
   align-items: center;
   justify-content: center;
   padding: 24px;
+  perspective: 400px;
   overflow: hidden;
 }
 
@@ -609,47 +610,44 @@ body.landing-page {
 
 .time-machine-portal {
   position: absolute;
-  inset: -10%;
+  inset: 0;
   z-index: 0;
-  filter: blur(40px);
-  opacity: 0.6;
+  overflow: hidden;
   pointer-events: none;
 }
+
+/* Big, bright, fully-opaque blobs — no blur filter at all. The crisp
+   edge comes from box-shadow (a tight black inset shadow plus a thin
+   bright outer glow), matching the reference site's actual technique.
+   Blur was the mistake in earlier passes: it smeared away exactly the
+   asymmetric-shape detail that makes simple in-place rotation visible. */
 
 .time-machine-portal div {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 46vmin;
-  height: 46vmin;
-  margin: -23vmin 0 0 -23vmin;
+  width: 62vmin;
+  height: 62vmin;
+  margin: -31vmin 0 0 -31vmin;
   border-radius: 90% 95% 85% 105%;
-  background: #2dd4bf;
+  background: #00f5d0;
+  opacity: 1;
   mix-blend-mode: screen;
-  box-shadow: 0 0 0.5em 0.2em #000 inset, 0 0 0.15em 0 #fff;
+  box-shadow: 0 0 9vmin 3.6vmin #000 inset, 0 0 2.6vmin 0 #fff;
   animation: time-machine-drift linear infinite;
 }
 
-/* Simple, robust drift animation: large translate swings (tens of vmin,
-   i.e. a real fraction of the screen) plus continuous hue-rotate, one
-   direction reversed. This intentionally avoids clever
-   transform-origin/calc() tricks around a barely-off-center point —
-   that first attempt produced a rotation so subtle it was
-   imperceptible once blurred. Large, obvious position swings survive
-   blur(40px) without question. */
-
-.time-machine-portal div:nth-child(1) { animation-duration: 14s; }
-.time-machine-portal div:nth-child(2) { animation-duration: 19s; animation-direction: reverse; }
-.time-machine-portal div:nth-child(3) { animation-duration: 23s; }
-.time-machine-portal div:nth-child(4) { animation-duration: 17s; animation-direction: reverse; }
-.time-machine-portal div:nth-child(5) { animation-duration: 21s; }
+.time-machine-portal div:nth-child(1) { --tx: -6%;  --ty: -6%; transform: translate(var(--tx), var(--ty)) rotate(0deg); animation-duration: 5.6s; }
+.time-machine-portal div:nth-child(2) { --tx: 4%;   --ty: -3%; transform: translate(var(--tx), var(--ty)) rotate(0deg); animation-duration: 8.7s; }
+.time-machine-portal div:nth-child(3) { --tx: 6%;   --ty: 5%;  transform: translate(var(--tx), var(--ty)) rotate(0deg); animation-duration: 6.9s; }
+.time-machine-portal div:nth-child(4) { --tx: -4%;  --ty: 6%;  transform: translate(var(--tx), var(--ty)) rotate(0deg); animation-duration: 10.8s; }
+.time-machine-portal div:nth-child(5) { --tx: -8%;  --ty: 2%;  transform: translate(var(--tx), var(--ty)) rotate(0deg); animation-duration: 9.3s; }
 
 @keyframes time-machine-drift {
-  0%   { transform: translate(0, 0) rotate(0deg); filter: hue-rotate(0deg); }
-  25%  { transform: translate(18vmin, -12vmin) rotate(90deg); filter: hue-rotate(90deg); }
-  50%  { transform: translate(-8vmin, 16vmin) rotate(180deg); filter: hue-rotate(180deg); }
-  75%  { transform: translate(-16vmin, -14vmin) rotate(270deg); filter: hue-rotate(270deg); }
-  100% { transform: translate(0, 0) rotate(360deg); filter: hue-rotate(360deg); }
+  to {
+    transform: translate(var(--tx), var(--ty)) rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -685,6 +683,14 @@ body.landing-page {
   z-index: 1;
   max-width: 640px;
   text-align: center;
+  transform: rotateX(-25deg);
+  transform-origin: 50% 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .time-machine-inner {
+    transform: none;
+  }
 }
 
 .time-machine-inner h2 {
