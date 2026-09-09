@@ -598,6 +598,55 @@ body.landing-page {
   align-items: center;
   justify-content: center;
   padding: 24px;
+  overflow: hidden;
+}
+
+/* The "cloudy window" portal effect: five overlapping organic blobs,
+   continuously rotating and cycling hue, heavily blurred into a soft
+   swirling glow behind the modal content. Adapted from the open
+   CodePen "A Portal to Tomorrow" by @jasesmith (credited on the
+   reference site), retinted from green to Nicole's teal accent. */
+
+.time-machine-portal {
+  position: absolute;
+  inset: -10%;
+  z-index: 0;
+  filter: blur(60px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.time-machine-portal div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 42vmin;
+  height: 42vmin;
+  border-radius: 90% 95% 85% 105%;
+  background: #2dd4bf;
+  mix-blend-mode: screen;
+  filter: hue-rotate(0deg);
+  box-shadow: 0 0 0.5em 0.2em #000 inset, 0 0 0.15em 0 #fff;
+  animation: time-machine-wobble linear infinite;
+}
+
+.time-machine-portal div:nth-child(1) { transform: translate(-53%, -53%); animation-duration: 5.6s; }
+.time-machine-portal div:nth-child(2) { transform: translate(-47%, -52%); animation-duration: 8.7s; }
+.time-machine-portal div:nth-child(3) { transform: translate(-45%, -50%); animation-duration: 6.9s; }
+.time-machine-portal div:nth-child(4) { transform: translate(-53%, -45%); animation-duration: 10.8s; }
+.time-machine-portal div:nth-child(5) { transform: translate(-55%, -45%); animation-duration: 9.3s; }
+
+@keyframes time-machine-wobble {
+  to {
+    filter: hue-rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .time-machine-portal div {
+    animation: none;
+  }
 }
 
 .time-machine-overlay[hidden] {
@@ -608,6 +657,7 @@ body.landing-page {
   position: absolute;
   top: 20px;
   right: 24px;
+  z-index: 1;
   background: none;
   border: none;
   color: var(--text-faint);
@@ -622,6 +672,8 @@ body.landing-page {
 }
 
 .time-machine-inner {
+  position: relative;
+  z-index: 1;
   max-width: 640px;
   text-align: center;
 }
