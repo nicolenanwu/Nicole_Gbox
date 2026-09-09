@@ -8,7 +8,40 @@ document.addEventListener("DOMContentLoaded", function () {
   initScrollSpy();
   initContactForm();
   initCursorSpotlight();
+  initTimeMachine();
 });
+
+function initTimeMachine() {
+  const btn = document.getElementById("time-machine-btn");
+  const modal = document.getElementById("time-machine-modal");
+  const closeBtn = modal ? modal.querySelector(".time-machine-close") : null;
+  if (!btn || !modal) return;
+
+  function openModal() {
+    modal.hidden = false;
+    btn.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    btn.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+    btn.focus();
+  }
+
+  btn.addEventListener("click", openModal);
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !modal.hidden) closeModal();
+  });
+}
 
 function initCursorSpotlight() {
   const spotlight = document.querySelector(".cursor-spotlight");

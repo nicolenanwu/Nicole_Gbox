@@ -546,3 +546,142 @@ body.landing-page {
     grid-template-columns: 20px 1fr;
   }
 }
+
+/* =========================================================
+   Time machine widget — floating icon (bottom-right) that opens
+   a full-screen modal listing past versions of the site, mirroring
+   the reference site's own "go back in time" feature.
+   ========================================================= */
+
+.time-machine-btn {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 20;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text-faint);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition: color 200ms ease, transform 200ms ease, border-color 200ms ease;
+}
+
+.time-machine-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent-border);
+  transform: translateY(-2px) rotate(25deg);
+}
+
+.time-machine-btn i {
+  animation: time-machine-spin 6s linear infinite;
+}
+
+@keyframes time-machine-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.time-machine-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(10, 12, 16, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.time-machine-overlay[hidden] {
+  display: none;
+}
+
+.time-machine-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.time-machine-close:hover {
+  color: var(--text);
+}
+
+.time-machine-inner {
+  max-width: 640px;
+  text-align: center;
+}
+
+.time-machine-inner h2 {
+  color: var(--text);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 32px;
+  font-family: var(--font-body);
+}
+
+.time-machine-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.time-machine-list a {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 2px solid var(--border);
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.time-machine-list a:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-3px);
+}
+
+.time-machine-list img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.time-machine-tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(10, 12, 16, 0.75);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+@media (max-width: 640px) {
+  .time-machine-list {
+    grid-template-columns: 1fr;
+  }
+
+  .time-machine-btn {
+    right: 18px;
+    bottom: 18px;
+  }
+}

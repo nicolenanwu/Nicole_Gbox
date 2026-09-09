@@ -36,7 +36,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="landing.css?v=6" />
+    <link rel="stylesheet" href="landing.css?v=7" />
     <script
       src="https://kit.fontawesome.com/ddc3ee268a.js"
       crossorigin="anonymous"
@@ -388,6 +388,53 @@
       </main>
     </div>
 
-    <script src="landing.js?v=6"></script>
+    <!-- Time machine: floating icon + modal revealing past site versions -->
+    <button
+      id="time-machine-btn"
+      class="time-machine-btn"
+      type="button"
+      aria-haspopup="dialog"
+      aria-expanded="false"
+      aria-controls="time-machine-modal"
+      title="Go back in time"
+    >
+      <span class="visually-hidden">See past versions of this site</span>
+      <i class="fas fa-compass" aria-hidden="true"></i>
+    </button>
+
+    <div id="time-machine-modal" class="time-machine-overlay" role="dialog" aria-modal="true" aria-labelledby="time-machine-title" hidden>
+      <button class="time-machine-close" type="button" aria-label="Close">&times;</button>
+      <div class="time-machine-inner">
+        <h2 id="time-machine-title">Looking for a different site? Go back in time&hellip;</h2>
+        <ul class="time-machine-list">
+          <li>
+            <a href="old/v1.html" aria-label="nicole-wu.com version 1">
+              <img src="media/old/v1.png" alt="Screenshot of nicole-wu.com version 1" />
+              <span class="time-machine-tag">v1</span>
+            </a>
+          </li>
+          <li>
+            <a href="classic.html" aria-label="nicole-wu.com version 2">
+              <img src="media/old/v2.png" alt="Screenshot of nicole-wu.com version 2" />
+              <span class="time-machine-tag">v2</span>
+            </a>
+          </li>
+          <li>
+            <a href="old/v3.html" aria-label="nicole-wu.com version 3">
+              <img src="media/old/v3.png" alt="Screenshot of nicole-wu.com version 3" />
+              <span class="time-machine-tag">v3</span>
+            </a>
+          </li>
+          <li>
+            <a href="old/v4.html" aria-label="nicole-wu.com version 4">
+              <img src="media/old/v4.png" alt="Screenshot of nicole-wu.com version 4" />
+              <span class="time-machine-tag">v4</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="landing.js?v=7"></script>
   </body>
 </html>
