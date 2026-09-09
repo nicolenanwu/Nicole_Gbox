@@ -416,6 +416,18 @@ body.landing-page {
   color: var(--accent);
 }
 
+/* ---------- About bio inline links ---------- */
+
+.bio-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.bio-link:hover {
+  color: var(--accent);
+}
+
 /* ---------- Contact ---------- */
 
 .contact-block .content-heading::after {
