@@ -21,6 +21,24 @@
   font-size: 1.15rem;
 }
 
+/* Diagonal "opens elsewhere" arrow — same visual language as the
+   Experience cards on index.html (Brittany Chiang-style link icon).
+   landing.css isn't loaded on this page, so the base/hover pair lives
+   here instead, scoped to the venture cards themselves. */
+.ventures-page .entry-link-icon {
+  font-size: 0.7em;
+  margin-left: 6px;
+  color: var(--text-faint);
+  vertical-align: -1px;
+  transform: translate(0, 0);
+  transition: color 150ms ease, transform 150ms ease;
+}
+
+.ventures-page .card:hover .entry-link-icon {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
 .ventures-page .card-text {
   font-size: 0.98rem;
   margin-bottom: 10px;

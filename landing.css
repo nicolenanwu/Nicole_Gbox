@@ -353,14 +353,15 @@ body.landing-page {
 .entry-link-icon {
   font-size: 0.7em;
   margin-left: 7px;
-  opacity: 0;
-  transform: translate(-2px, 2px);
-  transition: opacity 150ms ease, transform 150ms ease;
+  color: var(--text-faint);
+  vertical-align: -1px;
+  transform: translate(0, 0);
+  transition: color 150ms ease, transform 150ms ease;
 }
 
 .entry-item:hover .entry-link-icon {
-  opacity: 1;
-  transform: translate(0, 0);
+  color: var(--accent);
+  transform: translate(2px, -2px);
 }
 
 .entry-body p {
