@@ -515,6 +515,43 @@ body.landing-page {
 
 /* ---------- Responsive ---------- */
 
+/* ---------- Flying subsection: text + photo ---------- */
+
+.flying-media {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.flying-copy {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+}
+
+.flying-photo {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 1000px) {
+  .flying-media {
+    grid-template-columns: 1fr;
+  }
+
+  .flying-copy,
+  .flying-photo {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+
 @media (max-width: 1000px) {
   .landing-wrap {
     flex-direction: column;
