@@ -620,59 +620,36 @@ body.landing-page {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 42vmin;
-  height: 42vmin;
+  width: 46vmin;
+  height: 46vmin;
+  margin: -23vmin 0 0 -23vmin;
   border-radius: 90% 95% 85% 105%;
   background: #2dd4bf;
   mix-blend-mode: screen;
-  filter: hue-rotate(0deg);
   box-shadow: 0 0 0.5em 0.2em #000 inset, 0 0 0.15em 0 #fff;
-  animation: time-machine-wobble linear infinite;
+  animation: time-machine-drift linear infinite;
 }
 
-/* Each blob keeps its own (--x, --y) offset constant through the
-   animation and rotates around an OFF-CENTER origin derived from that
-   offset — this is what makes it visibly orbit/swirl rather than just
-   spin in place. In-place rotation of a blurred, near-symmetric blob
-   is nearly invisible; orbiting position change is not. This detail
-   was missing from the first pass, which is why it looked static. */
+/* Simple, robust drift animation: large translate swings (tens of vmin,
+   i.e. a real fraction of the screen) plus continuous hue-rotate, one
+   direction reversed. This intentionally avoids clever
+   transform-origin/calc() tricks around a barely-off-center point —
+   that first attempt produced a rotation so subtle it was
+   imperceptible once blurred. Large, obvious position swings survive
+   blur(40px) without question. */
 
-.time-machine-portal div:nth-child(1) {
-  --x: -53%; --y: -53%;
-  transform: translate(var(--x), var(--y)) rotate(0deg);
-  transform-origin: calc(-1 * var(--y)) calc(-1 * var(--x));
-  animation-duration: 5.6s;
-}
-.time-machine-portal div:nth-child(2) {
-  --x: -47%; --y: -52%;
-  transform: translate(var(--x), var(--y)) rotate(0deg);
-  transform-origin: calc(-1 * var(--y)) calc(-1 * var(--x));
-  animation-duration: 8.7s;
-}
-.time-machine-portal div:nth-child(3) {
-  --x: -45%; --y: -50%;
-  transform: translate(var(--x), var(--y)) rotate(0deg);
-  transform-origin: calc(-1 * var(--y)) calc(-1 * var(--x));
-  animation-duration: 6.9s;
-}
-.time-machine-portal div:nth-child(4) {
-  --x: -53%; --y: -45%;
-  transform: translate(var(--x), var(--y)) rotate(0deg);
-  transform-origin: calc(-1 * var(--y)) calc(-1 * var(--x));
-  animation-duration: 10.8s;
-}
-.time-machine-portal div:nth-child(5) {
-  --x: -55%; --y: -45%;
-  transform: translate(var(--x), var(--y)) rotate(0deg);
-  transform-origin: calc(-1 * var(--y)) calc(-1 * var(--x));
-  animation-duration: 9.3s;
-}
+.time-machine-portal div:nth-child(1) { animation-duration: 14s; }
+.time-machine-portal div:nth-child(2) { animation-duration: 19s; animation-direction: reverse; }
+.time-machine-portal div:nth-child(3) { animation-duration: 23s; }
+.time-machine-portal div:nth-child(4) { animation-duration: 17s; animation-direction: reverse; }
+.time-machine-portal div:nth-child(5) { animation-duration: 21s; }
 
-@keyframes time-machine-wobble {
-  to {
-    filter: hue-rotate(360deg);
-    transform: translate(var(--x), var(--y)) rotate(360deg);
-  }
+@keyframes time-machine-drift {
+  0%   { transform: translate(0, 0) rotate(0deg); filter: hue-rotate(0deg); }
+  25%  { transform: translate(18vmin, -12vmin) rotate(90deg); filter: hue-rotate(90deg); }
+  50%  { transform: translate(-8vmin, 16vmin) rotate(180deg); filter: hue-rotate(180deg); }
+  75%  { transform: translate(-16vmin, -14vmin) rotate(270deg); filter: hue-rotate(270deg); }
+  100% { transform: translate(0, 0) rotate(360deg); filter: hue-rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
