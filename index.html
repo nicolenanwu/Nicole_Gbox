@@ -36,7 +36,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="landing.css?v=16" />
+    <link rel="stylesheet" href="landing.css?v=18" />
     <script
       src="https://kit.fontawesome.com/ddc3ee268a.js"
       crossorigin="anonymous"
@@ -417,7 +417,46 @@
       title="Go back in time"
     >
       <span class="visually-hidden">See past versions of this site</span>
-      <i class="fas fa-compass" aria-hidden="true"></i>
+      <svg class="compass-icon" viewBox="0 0 100 100" aria-hidden="true">
+        <defs>
+          <radialGradient id="compassFace" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" style="stop-color: var(--surface-alt)" />
+            <stop offset="70%" style="stop-color: var(--surface)" />
+            <stop offset="100%" style="stop-color: var(--bg)" />
+          </radialGradient>
+          <linearGradient id="compassRim" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color: var(--accent)" />
+            <stop offset="50%" style="stop-color: var(--accent-hover)" />
+            <stop offset="100%" style="stop-color: var(--accent)" />
+          </linearGradient>
+        </defs>
+
+        <g class="compass-housing">
+          <circle cx="50" cy="50" r="47" fill="url(#compassRim)" />
+          <circle cx="50" cy="50" r="40" fill="url(#compassFace)" stroke="var(--accent-border)" stroke-width="1" />
+
+          <g stroke="var(--text-faint)" stroke-width="1.4" stroke-linecap="round">
+            <line x1="50" y1="12" x2="50" y2="19" stroke="var(--accent)" stroke-width="2" />
+            <line x1="50" y1="81" x2="50" y2="88" />
+            <line x1="12" y1="50" x2="19" y2="50" />
+            <line x1="81" y1="50" x2="88" y2="50" />
+            <line x1="25.4" y1="25.4" x2="30.4" y2="30.4" />
+            <line x1="69.6" y1="69.6" x2="74.6" y2="74.6" />
+            <line x1="74.6" y1="25.4" x2="69.6" y2="30.4" />
+            <line x1="30.4" y1="69.6" x2="25.4" y2="74.6" />
+          </g>
+
+          <g class="compass-needle">
+            <path d="M50 22 L58 50 L50 50 Z" fill="var(--accent)" />
+            <path d="M50 22 L42 50 L50 50 Z" fill="var(--accent-hover)" />
+            <path d="M50 78 L58 50 L50 50 Z" fill="var(--text-muted)" />
+            <path d="M50 78 L42 50 L50 50 Z" fill="var(--text-faint)" />
+            <circle cx="50" cy="50" r="4.5" fill="var(--accent)" stroke="var(--bg)" stroke-width="1" />
+          </g>
+
+          <ellipse class="compass-shine" cx="38" cy="32" rx="16" ry="9" fill="#ffffff" opacity="0.14" />
+        </g>
+      </svg>
     </button>
 
     <div id="time-machine-modal" class="time-machine-overlay" role="dialog" aria-modal="true" aria-labelledby="time-machine-title" hidden>
